@@ -1,0 +1,70 @@
+﻿@model Core.UserModel
+@using Core;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Styles.Render("~/Content/styles")
+    @Scripts.Render("~/Scripts/Jquery")
+    @Scripts.Render("~/Scripts/Script")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery-Validations.js"></script>
+</head>
+<body>
+
+    <div class="login_bg"></div>
+    <div class="login_tax" style="height: 300px;">
+        <h3>Login </h3>
+        <div class="login_body">
+            @using (@Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "userid" }))
+            {
+                <div class="input_sec">
+                    <label>Username</label>
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+                @Html.LabelFor(m => m.UserName, new { style = "display: none;", id = "lblUserNameError" })
+                <div class="input_sec">
+                    <label>Password</label>
+                    @Html.PasswordFor(m => m.Password)
+                </div>
+                @Html.LabelFor(m => m.Password, new { style = "display: none;", id = "lblPasswordError" })
+                <div class="lgn_btns">
+                    <a href="user/index.html">
+
+                        <input type="submit" class="btn blue_btn" value="Login" name="Login" onclick="return Check();" />
+                    </a>
+                </div>
+            }
+            <div class="rgstr">
+                If you Want to Register Please  @Html.ActionLink("Click Here", "Register", "Account")
+            </div>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <script>
+            $(document).ready(function () {
+                
+                if ("@Model.IsValidUserName"=="False") {
+                    alert("Invalid UserName / Password");
+                }
+                if ("@Model.Id" != "0") {
+                    alert("User Registration Completed Sucessfully, Please Proceed for Login");
+                }
+            });
+        </script>
+    }
+
+
+ 
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/Jquery-Validations.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Core.TaxCourse> data = (ViewBag.CourseSections ?? new List<Core.TaxCourse>());
+}
+
+<section class="stp_sec">
+    <div class="stp_hd"><a href="~/Admin/TaxCourse"><i class="fa fa-arrow-circle-left lft_prv"></i></a> @data[0].CourseName </div>
+    <div class="stp">
+        <div class="stp_lt">
+            <ul>
+                <li class="ad_crs">
+                    <a href="@Url.Action("AddNewSection", "Admin", new { Id = @data.Count != 0 ? data[0].Id : 0, SectionID = 0, CatalogId= data[0].CatalogId }, null)"><i class="fa fa-plus-circle"></i> Add New Section</a>                  
+                </li>
+                @{
+                    if (data[0].CatalogId != (int)Core.CourseCatalog.Insurance)
+                    {
+                        <li class="ad_crs ad_crs1">
+                            <a href="@Url.Action("AddNewTest", "Admin", new { Id = @data.Count != 0 ? data[0].Id : 0, SectionID = 0, CatalogId = data[0].CatalogId }, null)"><i class="fa fa-plus-circle"></i> Add New Test</a>                            
+                        </li>
+                    }
+                }
+
+                @foreach (var item in data)
+                {
+                    if (item.SectionTitle != null)
+                    {
+                        <li id="@item.SectionID">@Html.ActionLink(item.SectionTitle, "GetContent", "Admin", new { Type = item.SectionType, Id = item.Id, SectionID = item.SectionID, CatalogId = item.CatalogId }, null)</li>
+                    }
+                }
+            </ul>
+        </div>
+        @RenderBody()
+
+    </div>
+
+</section>
+
+

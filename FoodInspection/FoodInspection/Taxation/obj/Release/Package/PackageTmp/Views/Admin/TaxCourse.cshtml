@@ -1,0 +1,92 @@
+﻿@model List<Core.CourseInsurance>
+@{
+    ViewBag.Title = "Tax Course";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="aftrer_h">
+    <div class="container_m">
+        <div class="tbl_adm">
+            <div style="text-align:right;">
+             <a href="@Url.Action("AddTaxCourse", "Admin")" class="btn blue_btn"><i class="fa fa-plus-circle"></i> Add New Module</a>
+            </div>
+            <table id="tablegrid">
+                <thead>
+                    <tr>
+                        <th style="display: none;">CourseId </th>
+                        <th>Module Name</th>
+                        <th>Users</th>
+                        <th>steps</th>
+                        <th>Tests</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr>
+                        <td style="display: none;"><input type="text" id="CourseId" /></td>
+                        <td><input type="text" id="modulename" placeholder="Search By Module Name" /></td>
+                        <td><input type="text" id="users" placeholder="Search By Users" /></td>
+                        <td><input type="text" id="steps" placeholder="Search By Steps" /></td>
+                        <td><input type="text" id="tests" placeholder="Search By Tests" /></td>
+                        <td class="src_act"><i class="fa fa-refresh"> </i><i class="fa fa-search"></i></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="display: none;">@item.Id</td>
+                            <td>@item.CourseName</td>
+                            <td>@item.Users</td>
+                            <td>@item.Steps</td>
+                            <td>@item.Tests</td>
+                            <td>
+                                <a href="@Url.Action("CourseResults", "Admin")"><i class="fa fa-trophy res"></i></a>
+                                <a href="@Url.Action("AddNewSection", "Admin", new { id = item.Id, CourseName = item.CourseName, CatalogId = item.CatalogId })">
+                                    <i class="fa fa-pencil edt_crs"></i>
+                                </a>                              
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#modulename').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#tablegrid tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#users').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#tablegrid tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#steps').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#tablegrid tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#tests').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#tablegrid tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+    });
+</script>

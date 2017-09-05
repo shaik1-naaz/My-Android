@@ -1,0 +1,54 @@
+﻿@model Core.TaxCourse
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_TrainingSteps.cshtml";
+}
+
+<div class="stp_rt">
+    <div class="step_m">
+        <h3 class="stp_title">@Model.SectionTitle</h3>
+        <div class="stp_bdy">
+            <iframe id="player" src="@Model.Text?html5=1&rel=0&modestbranding=1&fs=1"></iframe>
+        </div>
+        <div class="nxt_prv">
+            <span id="previous">
+                <i class="fa fa-arrow-circle-left"></i>
+                <input type="button" onclick="PreviousClick();" class="btn grey" value="Previous" />
+            </span>
+            <span id="next">
+                @Html.ActionLink("Next", "SectionTest", "User", new { Id = @Model.Id, SectionID = @Model.SectionID },
+                                    new { @class = "btn blue_btn nxt_mk_c" })
+                <i class="fa fa-arrow-circle-right"></i>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        debugger;
+        $('#@Model.SectionID').attr('class', 'active');
+
+        var iframeEl = $('#player').contents().get(0);
+        $(iframeEl).bind('contextmenu', function (event) {
+            return false;
+        });
+    });
+
+
+    function NextClick() {
+
+        var url = $('#@Model.SectionID').next().find('a').attr('href');
+        if (url !== undefined) {
+            window.location = url;
+        }
+    }
+
+    function PreviousClick() {
+
+        var url = $($('#@Model.SectionID').parent().parent().find('ul li')[$('#@Model.SectionID').index() - 1]).find('a').attr('href');
+        if (url !== undefined && url.indexOf("User/Videos") != 1) {
+            window.location = url;
+        }
+    }
+</script>

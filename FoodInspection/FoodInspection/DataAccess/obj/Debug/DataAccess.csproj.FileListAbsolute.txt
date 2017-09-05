@@ -1,0 +1,69 @@
+E:\New folder\Taxation\src\DataAccess\bin\Debug\DataAccess.dll.config
+E:\New folder\Taxation\src\DataAccess\bin\Debug\DataAccess.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\DataAccess.pdb
+E:\New folder\Taxation\src\DataAccess\bin\Debug\Core.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\EntityFramework.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\Microsoft.CSharp.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Data.DataSetExtensions.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Data.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Data.Entity.Design.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Data.Entity.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Runtime.Serialization.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Security.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Xml.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\System.Xml.Linq.dll
+E:\New folder\Taxation\src\DataAccess\bin\Debug\Core.pdb
+E:\New folder\Taxation\src\DataAccess\bin\Debug\EntityFramework.xml
+E:\New folder\Taxation\src\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\New folder\Taxation\src\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\New folder\Taxation\src\DataAccess\obj\Debug\DataAccess.dll
+E:\New folder\Taxation\src\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\Core.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\Microsoft.CSharp.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Data.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Data.Entity.Design.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Data.Entity.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Security.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Xml.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\System.Xml.Linq.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\Core.pdb
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\itoadmin\Downloads\Taxation\DataAccess\obj\Debug\DataAccess.pdb
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\DataAccess.dll.config
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\DataAccess.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\DataAccess.pdb
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\Core.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\EntityFramework.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\Microsoft.CSharp.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Data.DataSetExtensions.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Data.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Data.Entity.Design.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Data.Entity.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Runtime.Serialization.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Security.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Xml.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\System.Xml.Linq.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\Core.pdb
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\EntityFramework.xml
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\obj\Debug\DataAccess.dll
+E:\food safety database\FoodInspection\FoodInspection\DataAccess\obj\Debug\DataAccess.pdb

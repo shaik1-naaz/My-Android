@@ -1,0 +1,35 @@
+*************************---------------------------**************************
+Data Time:8/17/2016 3:16:33 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/17/2016 3:18:27 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/17/2016 3:26:51 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/17/2016 3:27:36 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/17/2016 4:19:21 PM
+Exception Name:e:\New folder\Taxation\src\Taxation\Views\User\TaxCourses.cshtml(76): error CS0128: A local variable named 'count' is already defined in this scope
+Event Name:TaxCourses
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/17/2016 4:19:32 PM
+Exception Name:e:\New folder\Taxation\src\Taxation\Views\User\TaxCourses.cshtml(76): error CS0128: A local variable named 'count' is already defined in this scope
+Event Name:TaxCourses
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/17/2016 5:34:44 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:GetContent
+Control Name:User

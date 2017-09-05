@@ -1,0 +1,28 @@
+﻿@model  List<Core.AgentReferences>
+@{
+    Layout = null;
+}
+
+@{if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <ul>
+            <li>
+                <a href="@Url.Action("RefereralInfo", "Admin", new { ReferenceId = item.ReferenceId })">
+                    <b>@item.ReferedBy </b> refered <b>@item.Referee</b>
+                    <div><i class="fa fa-calendar"></i><span>@item.Date</span></div>
+                </a>
+            </li>
+        </ul>
+    }
+}
+  else
+  {
+    <ul>
+        <li>
+                <b style="color:red">No New Notifications </b>               
+        </li>
+    </ul>
+  }
+}

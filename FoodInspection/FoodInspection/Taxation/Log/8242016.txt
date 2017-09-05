@@ -1,0 +1,5 @@
+*************************---------------------------**************************
+Data Time:8/24/2016 5:47:19 PM
+Exception Name:e:\New folder\Taxation\src\Taxation\Views\User\TaxCourses.cshtml(226): error CS0103: The name 'value' does not exist in the current context
+Event Name:TaxCourses
+Control Name:User

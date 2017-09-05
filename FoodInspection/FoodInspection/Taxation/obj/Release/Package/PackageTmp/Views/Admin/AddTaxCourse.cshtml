@@ -1,0 +1,28 @@
+﻿@model Core.CourseInsurance
+@{
+    ViewBag.Title = "Add Tax Course";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .customerror{ color: Red;}
+</style>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery-Validations.js"></script>
+        <div class="container_m">
+            <div class="add_new">
+                <h3><a href="@Url.Action("TaxCourse", "Admin")"><i class="fa fa-arrow-circle-left"></i></a> Add New Tax Course Module</h3>
+                <div class="add_new_body">
+                    @using (@Html.BeginForm("AddTaxCourse", "Admin", FormMethod.Post, new { @id = "addTaxCourse" }))
+                    {
+                        <div class="input_sec">
+                            <label>Course Module</label>
+                            @Html.TextBoxFor(m => m.CourseName, new { MaxLength = "50" })                           
+                        </div>
+                        <div class="lgn_btns">
+                            @Html.ActionLink("Cancel", "TaxCourse", "Admin", null, new { @class = "btn grey" })
+                            <input type="submit" name="Add" value="Add" class="btn blue_btn" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>

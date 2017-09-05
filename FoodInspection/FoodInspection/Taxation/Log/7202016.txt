@@ -1,0 +1,185 @@
+*************************---------------------------**************************
+Data Time:7/20/2016 10:46:22 AM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 10:48:36 AM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 10:49:12 AM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 10:50:14 AM
+Exception Name:The controller for path '/Shared/PageNotFound' was not found or does not implement IController.
+Event Name:PageNotFound
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 10:53:05 AM
+Exception Name:A public action method 'Account' was not found on controller 'Taxation.Controllers.AccountController'.
+Event Name:Account
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/20/2016 10:54:14 AM
+Exception Name:A public action method 'Account' was not found on controller 'Taxation.Controllers.AccountController'.
+Event Name:Account
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/20/2016 10:54:40 AM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 12:45:08 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 12:55:00 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 12:59:21 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 1:00:01 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 1:03:44 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 1:05:51 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 1:16:46 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 2:41:59 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 2:56:13 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:00:22 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:03:13 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:09:54 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:13:27 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:18:08 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:19:54 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:42:09 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:46:15 PM
+Exception Name:A public action method 'RefereralInfo' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 3:51:59 PM
+Exception Name:A public action method 'RefereralInfo' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 3:53:36 PM
+Exception Name:A public action method 'RefereralInfo' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 3:57:38 PM
+Exception Name:The controller for path '/Shared/RefereralInfo' was not found or does not implement IController.
+Event Name:RefereralInfo
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/20/2016 3:58:06 PM
+Exception Name:A public action method 'RefereralInfo' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:RefereralInfo
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:07:35 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:14:30 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:20:49 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:22:36 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:24:15 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:26:56 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:36:04 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:37:08 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/20/2016 6:40:25 PM
+Exception Name:Cannot redirect after HTTP headers have been sent.
+Event Name:ExportToExcell
+Control Name:Admin

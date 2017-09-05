@@ -1,0 +1,48 @@
+﻿@model List<Core.CourseInsurance>
+@{
+    ViewBag.Title = "Course Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="pr_bg"></div>
+    <div class="container_m">
+        <div class="trp">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+        </div>
+    </div>
+</section>
+<section class="rslt_main">
+    <div class="container_m">
+        @using (Html.BeginForm())
+        { 
+        <div class="srch_m">
+            <input type="text" placeholder="Search By User Name" name="CourseName">
+            <input type="text" placeholder="Search By Date" name="TestDate">
+            <button type="submit" class="btn green">
+            <i class="fa fa-search"></i> Search</button>
+        </div>
+        }
+        @foreach (var item in Model)
+        {
+            <div class="rslt">
+
+                <div class="crs_nm_rslt">@item.CourseName</div>                
+                <div class="rslt_dt"><i class="fa fa-calendar"></i> @item.TestDate</div>
+                <div class="scr_rslt">
+                    <i class="fa fa-trophy"></i> <span>@item.Score</span>
+                </div>
+
+            </div>
+        }
+
+
+
+    </div>
+</section>

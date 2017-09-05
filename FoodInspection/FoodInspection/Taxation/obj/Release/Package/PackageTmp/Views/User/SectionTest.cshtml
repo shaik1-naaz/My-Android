@@ -1,0 +1,139 @@
+﻿@model List<Core.Questions>
+@{
+    ViewBag.Title = "Section Test";
+    Layout = "~/Views/Shared/_TrainingSteps.cshtml";
+
+}
+<style>
+    table.ques td span i.fa {
+        position: absolute;
+        top: 40px;
+        left: -6px;
+    }
+
+    table.ques {
+        width: 100%;
+        padding: 20px;
+        position: relative;
+    }
+
+    .sectionquestions {
+        height: calc(100% - 107px);
+        overflow: auto;
+    }
+
+        .sectionquestions table td span span {
+            display: inline-block;
+            width: calc(100% - 60px);
+            vertical-align: top;
+            margin-top: -6px;
+        }
+
+    .nxt_prv {
+        background: #eee;
+    }
+</style>
+
+<div class="stp_rt">
+    <div class="stp_hd"> QUIZ  </div>
+    @{
+        if (Model.Count > 0)
+        {
+            <div class="sectionquestions">
+                @{
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <table class="ques">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <span>
+                                    <i class="fa fa-check-circle crt" style="display:none;" id="rit_@item.QuestionId"></i>
+                                    <i class="fa fa-times-circle wrng" style="display:none;" id="wrng_@item.QuestionId"></i>
+                                    <label id="@item.QuestionId"> @i. @item.Question</label>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @foreach (var Ans in item.Answers)
+                                {
+                                    if (Ans.Answer != null)
+                                    {
+                                        <span><input id="@Ans.AnswerId" type="radio" name="@item.QuestionId"> <span>@Ans.Answer</span></span>
+                                    }
+                                }
+                            </td>
+                            <td class="dsc_shw dsp" style="display:none;">
+                                <div>
+                                    @( item.Description != null ? item.Description : "No Description Available")
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                                i++;
+            }
+                }
+            </div>
+
+            <div class="nxt_prv">
+                <input type="button" id="btnSubmit" name="Text" value="Submit" onclick="ValidateTest();" class="btn green" style="margin-right: 20px;background: #33AA81 !important;" />
+                <span id="next">
+                    <input type="button" onclick="NextClick();" class="btn blue_btn" value="Next" />
+                    <i class="fa fa-arrow-circle-right"></i>
+                </span>
+            </div>
+        }
+
+    }
+</div>
+
+<script>
+    function NextClick() {
+        var url = $('#@Model.Select(x=>x.SectionID).FirstOrDefault()').next().find('a').attr('href');
+        if (url !== undefined) {
+            window.location = url;
+        }
+    }
+
+    $(document).ready(function () {
+        $('#@Model.Select(x=>x.SectionID).FirstOrDefault()').attr('class', 'active');
+
+    });
+
+    function ValidateTest() {
+        $('.wrng, .crt, .dsp').hide();
+        var data = [];
+        $('.ques').each(function () {
+            var qusid = $(this).find('label').attr('id');
+            var ansid = $(this).find('input[type=radio]:checked').attr('id');
+            data.push({ QuestionId : qusid, AnswerId : ansid });
+        });
+
+        var SectionId=@Model.Select(x => x.SectionID).FirstOrDefault();
+        var data1 = JSON.stringify(data);
+
+        $.ajax({
+            url: '/User/SectionTest',
+            type: 'POST',
+            data: '{ "data":' + data1 + ', "SectionId": '+ parseInt(SectionId)+' }',
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+
+                if (result)
+                {
+                    $(result.Correct).show();
+                    $(result.Wrong).show();
+                    $('.dsp').show();
+                    $('#done_'+result.SectionId).show();
+                }
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    }
+
+</script>

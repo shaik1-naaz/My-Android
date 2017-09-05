@@ -1,0 +1,202 @@
+﻿@model Core.AgentReferences
+@{
+    ViewBag.Title = "RefererInfo";
+    var BaseController = ViewContext.Controller as Taxation.Controllers.BaseController;
+    var Role = BaseController.UserRole;
+    var Redirect = string.Empty;
+    if (Role == Core.UserType.Administrator)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        Redirect = "/Admin/Referals";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+        Redirect = "/User/Reference";
+    }
+}
+
+<style>
+    
+#SelectState select{
+    border: 0;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    background: transparent;
+    margin-top: 7px;
+}
+
+</style>
+<section class="aftrer_h">
+    <div class="container_m">
+        <div class="ref_view">
+            <a href="@Redirect" class="gt_ref">Go To references<i class="fa fa-arrow-circle-right"></i></a>
+            <h3>@Model.FirstName @Model.LastName <span class="ed_det"><i class="fa fa-pencil"></i></span></h3>
+            @if (Role == Core.UserType.Administrator)
+            {
+                <h4>
+                    refered by <span>@Model.Name</span>
+                </h4>
+            }
+            <div class="ref_det">
+
+                @using (Html.BeginForm("RefereralInfo", Role == Core.UserType.Administrator ? "Admin" : "User", FormMethod.Post, new { @id = "addrefid" }))
+                {
+                    <input type="hidden" name="ReferenceId" value="@Model.ReferenceId" />
+                    <div class="inp_det">
+                        <i class="fa fa-envelope"></i>
+                        <div class="inp_ed">
+                            @Html.TextBoxFor(m => m.Email, new { MaxLength = "50" })
+                        </div>
+                    </div>
+                    <div class="inp_det">
+                        <i class="fa fa-phone"></i>
+                        <div class="inp_ed">
+                            @Html.TextBoxFor(m => m.Phone, new { MaxLength = "15" })
+                        </div>
+                    </div>
+                    <div class="inp_det">
+
+                        <i class="fa fa-map-marker"></i>
+                        <div class="inp_ed">
+                            @Html.TextBoxFor(m => m.Address, new { MaxLength = "50" })             
+                            <div id="SelectState">
+                                @Html.DropDownList("State", EnumHelper.GetSelectList(typeof(Core.States)), "Select State", new {@style="border-width:0;" })
+                            </div>
+                            </div>
+                        </div>
+                        <div class="inp_det">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            <span>@Model.Note</span>
+                        </div>
+                        <div class="inp_det">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span>@Model.Status</span>
+                        </div>
+
+                        <div class="up_cn_btns">
+                            <input type="submit" value="Update" class="btn blue_btn" />
+                            <button type="button" class="btn grey up_cancel">
+                                <i class="fa fa-times"></i>
+                                Cancel
+                            </button>
+                        </div>
+                        }
+
+                        @{
+                    dynamic contacted = null, Accepted = null, Paid = null;
+                    if (Model.IsContacted.HasValue)
+                    {
+                        contacted = Model.IsContacted.Value;
+                    }
+                    if (Model.IsAccepted.HasValue)
+                    {
+                        Accepted = Model.IsAccepted.Value;
+                    }
+                    if (Model.IsPaid.HasValue)
+                    {
+                        Paid = Model.IsPaid.Value;
+                    }
+
+
+                    <div class="status_m">
+                        <div class="step_status @(contacted !=null  ? contacted? "status_checked":null :null)">
+                            <span><i class="fa fa-check"></i></span>
+                            <label>@(contacted == true ? "Contacted" : "Not Contacted")</label>
+                        </div>
+                        <div class="step_status @(contacted == true  ? Model.IsInstersted == 2 ? null : Model.IsInstersted == 1 ? "status_checked" : "status_reject" : null)">
+                            <span>
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                            </span>
+                            <label>Intersted</label>
+                        </div>
+                        <div class="step_status @(Accepted != null ? Accepted ? "status_checked" : "status_reject" : null)">
+                            <span>
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                            </span>
+                            <label>Deal Accepted</label>
+                        </div>
+                        <div class="step_status @(Accepted==true? Paid != null ? Paid ? "status_checked" : "status_reject" : null : null)">
+                            <span>
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                            </span>
+                            <label>Paid</label>
+                        </div>
+                    </div>
+                        }
+                    </div>
+
+                    @if (Role == Core.UserType.Administrator)
+            {
+                        <div class="ref_cmt">
+                            <h4>Add Notes</h4>
+                            @using (Html.BeginForm("AddAdminNote", "Admin", FormMethod.Post, new { @id = "AddAdminNote" }))
+                    {
+                                <div class="ref_cmt_i">
+                                    <input type="hidden" name="ReferenceId" value="@Model.ReferenceId" />
+                                    <textarea name="Note" id="Note" placeholder="Add Admin Comments" maxlength="200"></textarea>
+                                    <input type="submit" value="Save" class="btn" />
+                                </div>
+                    }
+                            <div class="ref_cmt_ds">
+                                @foreach (var item in Model.Notes)
+                        {
+                                    <div class="ref_cmt_d">
+                                        <div class="ref_cmt_date"><b>Date</b> <span>@item.CreatedOn</span></div>
+                                        <div class="ref_cmt_cont">@item.Notes</div>
+                                    </div>
+                        }
+                            </div>
+                        </div>
+            }
+
+                </div>
+
+
+
+
+            </div>
+    </section>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery-Validations.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#Phone").keydown(function (e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                    // Allow: Ctrl+A, Command+A
+                    (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: home, end, left, right, down, up
+                    (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+            $('.inp_det input,.inp_det select').attr('disabled', 'disabled');
+
+            $('.ed_det').click(function () {
+
+                $('.inp_det input,.inp_det select').removeAttr('disabled').css('border-width', '1px');
+                $('.up_cn_btns').show();
+            });
+
+            $('.up_cancel').click(function () {
+
+                $('.inp_det input,.inp_det select').attr('disabled', 'disabled').css('border-width', '0px');
+                $('.up_cn_btns').hide();
+            });
+
+
+        });
+
+
+    </script>

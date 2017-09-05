@@ -1,0 +1,111 @@
+﻿@model List<Core.UserModel>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="aftrer_h">
+    <div class="container_m">
+
+        @using (@Html.BeginForm())
+        {
+            <div class="tbl_adm">
+                <div style="text-align:right;">
+                    <a href="@Url.Action("AddUser", "Admin")" class="btn blue_btn"><i class="fa fa-plus-circle"></i> Add New User</a>
+                </div>
+                <table id="gridtable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>User Type</th>
+                            <th>modules Trained</th>
+                            <th>tests Taken</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="name" placeholder="Search By Name" /></td>
+                            <td><input type="text" id="email" placeholder="Search By Email" /></td>
+                            <td>@Html.DropDownList("usertype", EnumHelper.GetSelectList(typeof(Core.UserType)), "Select User Type")</td>
+                            <td><input type="text" id="modules" placeholder="Search By Courses Trained" /></td>
+                            <td><input type="text" id="tests" placeholder="Search By Tests Taken" /></td>
+                            <td class="src_act"><i class="fa fa-refresh"> </i><i class="fa fa-search"></i></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelitem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelitem => item.Email)</td>
+                                <td>@Html.DisplayFor(modelitem => item.UserTypeName)</td>
+                                <td>@Html.DisplayFor(modelitem => item.ModulesTrained)</td>
+                                <td>@Html.DisplayFor(modelitem => item.TestsTaken)</td>
+                                <td>
+                                    <a href="@Url.Action("UserResults", "Admin")">
+                                        <i class="fa fa-trophy res">
+                                        </i>
+                                    </a>                                  
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#name').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#gridtable tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#email').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#gridtable tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#usertype').change(function () {
+           
+            var val = $('#usertype option:selected').text().toLowerCase();
+
+                $('#gridtable tbody tr').hide();
+                var trs = $('table tbody tr').filter(function (d) {
+                    return $(this).text().toLowerCase().indexOf(val) != -1;
+                });
+                trs.show();
+                if (val == "select user type") {
+                    $('#gridtable tbody tr').show();
+                }
+
+        });
+        $('#modules').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#gridtable tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#tests').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#gridtable tbody tr').hide();
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+    });
+</script>
+
+
+
+

@@ -1,0 +1,24 @@
+﻿@model List<Core.SubscriptionPlans>
+@{
+    ViewBag.Title = "Plans";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div style="text-align:center;padding: 80px 0;">
+    @foreach (var item in Model)
+    {
+        <div id="@item.Id" class="plan_k @(item.IsActive ? "curnt_pln" : null)">
+            <h3>@item.PlanName<span>For Regular website</span></h3>
+            <div class="cst">$@item.Amount</div>
+            <ul>
+                <li>No of days Valid<span><i class="fa fa-calendar"></i> @item.DaysValid days</span></li>
+                <li>Accessibility to Tests<span><i class="fa fa-file-text-o"></i> @item.TestAccessbility</span></li>
+                <li>Support<span><i class="fa fa-wrench" aria-hidden="true"></i> @item.SupportType</span></li>
+            </ul>
+            <a href="@Url.Action("CardDetails", "Account",
+               new { PlanName = item.PlanName, Amount = @item.Amount, ValidTill = @item.DaysValid })"
+               class="btn_m">@(item.IsActive ? "Renewal" : "Pay Amount")</a>
+        </div>
+    }
+    
+</div>

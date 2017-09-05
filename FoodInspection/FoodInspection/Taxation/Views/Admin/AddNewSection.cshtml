@@ -1,0 +1,94 @@
+﻿@model Core.TaxCourse
+@{
+    ViewBag.Title = "Add New Section";
+    Layout = "~/Views/Shared/_CourseSteps.cshtml";
+}
+
+
+
+<div class="stp_rt">
+    <div id="addnew_sec">
+        <div class="add_new" style="margin-top:50px;">
+            @using (@Html.BeginForm("AddNewSection", "Admin", FormMethod.Post, new { @id = "sectionform" }))
+            {
+                <h3> Add New Section</h3>
+                <div class="add_new_body">
+                    <div class="input_sec"><label>Section Title</label>@Html.TextBoxFor(m => m.SectionTitle, new  { MaxLength="100" })</div>
+                    <div class="input_sec">
+                        @Html.DropDownListFor(m => m.SectionType, EnumHelper.GetSelectList(typeof(Core.SectionType)), "Type", new { @class = "input_sec", @id = "type_sec" })
+                    </div>                    
+                    <div id="File" class="input_sec" style="display:none"> @Html.TextBoxFor(m => m.File, new {  @id = "File" }) </div>
+                    <div id="content" class="input_sec" style="display:none"> @Html.TextAreaFor(m => m.Text, new { @id = "txtDesc" })</div>
+                    <div class="lgn_btns">
+                        @Html.ActionLink("Cancel", "TaxCourse", "Admin", null, new { @class = "btn grey" })
+                     
+                    <input type="submit" name="Add" value="Add" class="btn blue_btn" />
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    </div>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/tinymce/js/tinymce/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            tinymce.init({
+                selector: '#txtDesc',
+                plugins: "image code link textcolor",
+                toolbar: "fontselect fontsizeselect italic bold forecolor backcolor bullist numlist",
+                max_height: 500,
+                min_height: 200
+            });
+        });
+
+        $(document).ready(function () {
+            $('#type_sec').change(function () {
+                var value = $('#type_sec').find('option:selected').text();
+                if (value == "Video") {
+                    $('#File').show();
+                    $('#content').hide();
+                    $('.add_new').removeClass('max_850');
+                }
+                else if (value == "Content") {
+                    $('#File').hide();
+                    $('#content').show();
+                    $('.add_new').addClass('max_850');
+                }
+                else {
+                    $('#content').hide();
+                    $('#File').hide();
+                    $('.add_new').removeClass('max_850');
+                }
+            });
+
+        });
+        $(document).ready(function () {
+            
+            $("#sectionform").validate({
+                rules: {
+                    SectionTitle: {
+                        required: true,
+                    },
+                    SectionType: {
+                        required: true
+                    }
+                },
+                messages: {
+                    SectionTitle: {
+                        required: "Please Enter SectionTitle",
+
+                    },
+                    SectionType: {
+                        required: "Please Select SectionType"
+                    }
+                }
+            });
+        });
+
+    </script>
+

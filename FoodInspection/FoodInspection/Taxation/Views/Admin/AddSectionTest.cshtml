@@ -1,0 +1,207 @@
+﻿@model Core.QuestionsModel
+@{
+    ViewBag.Title = "AddSectionTest";
+    Layout = "~/Views/Shared/_CourseSteps.cshtml";
+}
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<div class="stp_rt">
+    <div class="sectest">
+        @using (@Html.BeginForm("AddSectionTest", "Admin", FormMethod.Post, new { id = "addsectiontest" }))
+        {
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Question</td>
+                        <td>
+                            @Html.HiddenFor(m => m.SectionID)
+                            @Html.HiddenFor(m => m.QuestionId)
+                            @Html.HiddenFor(m => m.Id)
+                            @Html.TextBoxFor(m => m.NewQuestion, new { placeholder = "Enter question" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Answer</td>
+                        <td>
+                            <label class="ans"><span><input type="radio" name="CorrectAnswer" value="Option1"></span> @Html.TextBoxFor(m => m.Option1, new { placeholder = "Option 1" })</label>
+                            <label class="ans"><span><input type="radio" name="CorrectAnswer" value="Option2"></span> @Html.TextBoxFor(m => m.Option2, new { placeholder = "Option 2" })</label>
+                            <label class="ans"><span><input type="radio" name="CorrectAnswer" value="Option3"></span> @Html.TextBoxFor(m => m.Option3, new { placeholder = "Option 3" })</label>
+                            <label class="ans"><span><input type="radio" name="CorrectAnswer" value="Option4"></span> @Html.TextBoxFor(m => m.Option4, new { placeholder = "Option 4" })</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>
+                            @Html.TextAreaFor(m => m.Description, new { placeholder = "Enter Description For Answer" ,@class="dsc_txtarea" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" id="btnAddQus" name="Text" value="Add Question" class="btn green" />
+                            <input type="submit" id="btnUpdateQus" name="Text" value="Update Question" class="btn green" style="display:none" />
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        }
+    </div>
+
+
+    <div class="sectionquestions">
+        <table>
+            <tbody>
+                @{
+                    int i = 1;
+                    foreach (var item in Model.Questions)
+                    {
+                        <tr>
+                            <td>
+                                @i. @item.Question
+                                <span class="edm">
+                                    <i class="fa fa-pencil" onclick="Update(@item.QuestionId);"></i>
+                                </span>
+                                <span class="dlm">
+                                    <i class="fa fa-trash-o" onclick="Delete(@item.QuestionId);"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @foreach (var Ans in item.Answers)
+                                {
+                                    <span><input id="@Ans.AnswerId" type="radio" @(Ans.IsCorrect ? Html.Raw("checked='checked'") : null)>@Ans.Answer</span>
+                                }
+                            </td>
+                        </tr>
+                                i++;
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+
+    function Update(Id) {
+        
+        $('#btnAddQus').hide();
+        $('#btnUpdateQus').show();
+
+        var sectionId = '@Model.SectionID';
+        var CourseId = '@Model.Id';
+        var QuesId = Id;
+        var data = JSON.stringify({
+            SectionID: sectionId,
+            CourseId: CourseId,
+            QuestionId: QuesId
+        });
+        $.ajax({
+            url: '/Admin/GetQuestion',
+            type: 'POST',
+            data: data,
+            contentType: 'application/json;',
+            success: function (result) {
+                
+                var Qus = result.data.Question;
+                var QusId = result.data.Id;
+                var Ans1 = result.data.Answers[0].Answer;
+                var Ans2 = result.data.Answers[1].Answer;
+                var Ans3 = result.data.Answers[2].Answer;
+                var Ans4 = result.data.Answers[3].Answer;
+
+                $('#NewQuestion').val(Qus);
+                $('#Option1').val(Ans1);
+                $('#Option2').val(Ans2);
+                $('#Option3').val(Ans3);
+                $('#Option4').val(Ans4);
+                $('#QuestionId').val(QusId)
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    }
+
+    function Delete(Id) {
+        if (confirm("Are you Sure you want to Delete this Question ?") == true) {
+            
+            var sectionId = '@Model.SectionID';
+            var CourseId = '@Model.Id';
+            var QuesId = Id;
+            var data = JSON.stringify({
+                SectionID: sectionId,
+                CourseId: CourseId,
+                QuestionId: QuesId
+            });
+            $.ajax({
+
+                url: '/Admin/DeleteQuestion',
+                type: 'POST',
+                data: data,
+                contentType: 'application/json;',
+                success: function (result) {
+                    
+                    if (result.data.toString() == "Sucess") {
+                        alert("Deleted Sucessfully");
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+    }
+
+
+    $(document).ready(function () {
+        $('#@Model.SectionID').addClass('active');
+        $('#addsectiontest').validate({
+            rules: {
+                NewQuestion: {
+                    required: true
+                },
+                Option1: {
+                    required: true
+                },
+                Option2: {
+                    required: true
+                }
+            },
+            messages: {
+                NewQuestion: {
+
+                    required: "Please enter Question"
+                },
+                Option1: {
+
+                    required: "Please give Option1"
+                },
+                Option2: {
+
+                    required: "Please give Option2"
+                }
+            }
+        });
+        $('#btnAddQus, #btnUpdateQus').click(function () {
+            if ($('#addsectiontest, #btnUpdateQus').valid()) {
+                
+                var isChecked = $("input[name=CorrectAnswer]:checked").val();
+                var value = $('#' + isChecked).val();               
+                
+                if (!isChecked) {
+                    alert('No Option Selected.Please select atleast one option');
+                    return false;
+                }
+                if (value == "") {
+                    alert("Please Select Proper Right Answer to Validate");
+                    return false;
+                }
+            }
+        });
+    });
+</script>

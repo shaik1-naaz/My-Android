@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="~/Content/formcss/styles.css" rel="stylesheet" />
+    @Styles.Render("~/Content/styles")
+    @Scripts.Render("~/Scripts/Jquery")
+    @Scripts.Render("~/Scripts/Script")
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <header class="row_m">
+        <a href="~/User/TaxCourses">
+            <div class="logo fleft">
+                Tax <span>Training</span>
+            </div>
+        </a>
+        <div class="nav_menu fright">
+            <ul>
+                <li id="liTaxCourse">@Html.ActionLink("Tax Course", "TaxCourses", "User")</li>
+                @{
+                    var UserDetails = ViewContext.Controller as Taxation.Controllers.BaseController;
+                    if (UserDetails.UserRole != Core.UserType.Accountant)
+                    {
+                        <li id="liInsurance">@Html.ActionLink("Insurance", "Insurance", "User")</li>
+                     <li id="liReference">@Html.ActionLink("My Reference", "Reference", "User")</li>
+                    }
+                }
+                <li id="liResults">@Html.ActionLink("Results", "Results", "User")</li>               
+                <li class="pr_lg">
+                    @{
+                        var controller = ViewContext.Controller as Taxation.Controllers.BaseController;
+                    }
+                    <img src="@Url.Action("Photo", "Account", new { UserId = controller.UserId })" onerror="this.onerror = null; this.src = '../../Images/no_image_thumb.gif'" /> <span>@Session["ProfileName"]</span></a>
+                    <ul>
+                        <li><a href="@Url.Action("Profile","Account")"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="@Url.Action("Logout", "Account")"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    @RenderBody()
+
+    <script>
+
+        $(document).ready(function () {
+            $('#@ViewBag.Active').attr('class', 'active');
+        });
+
+
+    </script>
+
+</body>
+</html>

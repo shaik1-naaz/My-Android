@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<h2>Index</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Example Form</title>
+    <script type="text/javascript" src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+    Using Payment API
+
+    <form id="myCCForm" action="@Url.Action("PaywithCreditCard","Payment")" method="post">
+            <input name="token" type="hidden" value="" />
+            <input id="ccNo" type="text" value="4000000000000002" autocomplete="off" required />
+            <input id="expMonth" type="text" size="2" required value="12" />
+            <input id="expYear" type="text" size="4" required value="2016" />
+            <input id="cvv" type="text" value="123" autocomplete="off" required />
+            <input type="submit" value="Submit Payment" />
+        </form>
+
+    Using Standard Payment Method
+    @*<form action='https://www.2checkout.com/checkout/purchase' method='post'>*@
+        <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
+            <input type='hidden' name='sid' value='901325328' />
+            <input type='hidden' name='mode' value='2CO' />
+            <input type='hidden' name='li_0_type' value='product' />
+            <input type='hidden' name='li_0_name' value='invoice123' />
+            <input type='hidden' name='li_0_price' value='25.99' />
+            <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
+            <input type='hidden' name='street_address' value='123 Test Address' />
+            <input type='hidden' name='street_address2' value='Suite 200' />
+            <input type='hidden' name='city' value='Columbus' />
+            <input type='hidden' name='state' value='OH' />
+            <input type='hidden' name='zip' value='43228' />
+            <input type='hidden' name='country' value='USA' />
+            <input type='hidden' name='email' value='example@2co.com' />
+            <input type='hidden' name='phone' value='614-921-2450' />
+            <input name='submit' type='submit' value='Checkout' />
+        </form>
+
+
+
+        <script>
+            var successCallback = function (data) {
+                debugger;
+                var myForm = document.getElementById('myCCForm');
+                myForm.token.value = data.response.token.token;
+                myForm.submit();
+            };
+
+            var errorCallback = function (data) {
+                if (data.errorCode === 200);
+                else alert(data.errorMsg);
+            };
+
+            var tokenRequest = function () {
+                debugger;
+                var args = {
+                    sellerId: "901325328",
+                    publishableKey: "B2CED53C-42D0-474D-BB89-72971E10EC23",
+                    ccNo: $("#ccNo").val(),
+                    cvv: $("#cvv").val(),
+                    expMonth: $("#expMonth").val(),
+                    expYear: $("#expYear").val()
+                };
+                TCO.requestToken(successCallback, errorCallback, args);
+            };
+
+            $(function () {
+                TCO.loadPubKey('sandbox');
+                $("#myCCForm").submit(function (e) {
+                    debugger;
+                    tokenRequest();
+                    return false;
+                });
+            });
+
+        </script>
+</body>
+</html>

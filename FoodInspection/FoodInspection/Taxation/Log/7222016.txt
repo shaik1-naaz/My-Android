@@ -1,0 +1,65 @@
+*************************---------------------------**************************
+Data Time:7/22/2016 10:41:44 AM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:08:49 AM
+Exception Name:A public action method 'Profile' was not found on controller 'Taxation.Controllers.AccountController'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:39:38 AM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:39:45 AM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:40:44 AM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:42:30 AM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 11:44:20 AM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 12:09:16 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 12:58:46 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 1:37:56 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 1:38:43 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 1:40:58 PM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/22/2016 1:41:19 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Profile
+Control Name:Account

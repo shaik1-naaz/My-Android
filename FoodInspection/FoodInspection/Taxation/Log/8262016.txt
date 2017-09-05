@@ -1,0 +1,250 @@
+*************************---------------------------**************************
+Data Time:8/26/2016 12:32:41 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 12:32:56 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 12:33:41 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 12:34:23 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:08:43 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:12 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:17 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:21 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:22 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:24 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:25 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:25 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:25 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:25 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:26 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:26 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:26 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:26 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:26 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:27 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:28 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:28 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:28 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:28 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:29 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:29 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:29 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:29 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:29 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:30 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:30 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:30 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:30 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:30 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:31 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:31 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:31 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:31 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:31 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:32 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:09:32 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:12:12 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:12:44 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:13:09 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/26/2016 1:24:28 PM
+Exception Name:Nullable object must have a value.
+Event Name:Training
+Control Name:User

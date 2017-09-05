@@ -1,0 +1,43 @@
+﻿@model Core.TaxCourse
+@{
+    ViewBag.Title = "Add New Test";
+    Layout = "~/Views/Shared/_CourseSteps.cshtml";
+}
+
+
+<div id="addnew_test">
+    <div class="add_new" style="margin-top:50px;">
+        <h3> Add New Test</h3>
+        @using (@Html.BeginForm("AddNewTest", "Admin", FormMethod.Post, new { @id="newtest"})) {
+            <div class="add_new_body">
+                <div class="input_sec">
+                    @Html.DropDownListFor(m=>m.FormId,  Model.Forms , "Select From", new { @id = "formtype" })
+            </div>
+            <div class="lgn_btns">
+                @Html.ActionLink("Cancel", "Description", "Admin", new { @class = "btn grey" })
+            <input type="submit" name="Add" value="Add" class="btn blue_btn" />
+        </div>
+    </div>
+            }
+    </div>
+</div>
+<script src="~/Scripts/jquery-2.2.3.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#newtest').validate({
+            rules: {
+                Formid: {
+                    required: true
+                }
+            },
+            messages: {
+                Formid: {
+                    required: "SectionTitle is required"
+                }
+            }, errorclass: "customerror"
+        });
+    });
+</script>
+
+

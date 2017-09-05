@@ -1,0 +1,84 @@
+﻿@model Core.UserModel
+@using Core;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    @Styles.Render("~/Content/styles")
+    @Scripts.Render("~/Scripts/Jquery")
+    @Scripts.Render("~/Scripts/Script")
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery-Validations.js"></script>
+
+</head>
+<body>
+
+    <div class="login_bg"></div>
+    <div class="login_tax" style="height:540px;">
+        <h3>Register </h3>
+        <div class="login_body">
+            <form method="post" id="registerid">
+                <div class="input_sec">
+                    <label>First Name</label>
+                    @Html.TextBoxFor(m => m.FirstName)
+                </div>                
+                <div class="input_sec">
+                    <label>Last Name</label>
+                    @Html.TextBoxFor(m => m.LastName)
+                </div>
+                <div class="input_sec gnd">
+                    <b>Gender</b>
+                    @Html.RadioButtonFor(m => m.Gender, Core.Gender.Male, new { id = Core.Gender.Male, @checked = "true" })
+                    @Core.Gender.Male
+                    @Html.RadioButtonFor(m => m.Gender, Core.Gender.Female, new { id = Core.Gender.Female, style = "margin-left: 65px;" })
+                   @Core.Gender.Female
+
+                </div>
+                <div class="input_sec">
+                    <label>User Name</label>
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+                <div class="input_sec">
+                    <label>Email</label>
+                    @Html.TextBoxFor(m => m.Email)
+                </div>
+                <div class="input_sec">
+                    <label>Password</label>
+                    @Html.PasswordFor(m => m.Password, new { id = "password" })
+
+                </div>
+                <div class="input_sec">
+                    <label>Confirm Password</label>
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                </div>
+                <div class="input_sec">
+                    @{ // you can put the following in a back-end method and pass through ViewBag
+                        var selectList = Enum.GetValues(typeof(Core.UserType))
+                                             .Cast<Core.UserType>()
+                                             .Where(e => e != Core.UserType.Administrator)
+                                             .Select(e => new SelectListItem
+                                                 {
+                                                     Value = ((int)e).ToString(),
+                                                     Text = e.ToString()
+                                                 });
+                    }
+                    @Html.DropDownList("UserType", selectList, "Select User Type")
+                </div>
+                <div class="lgn_btns">
+                    @Html.ActionLink("Cancel", "Login", "Account", null, new { @class = "btn grey" })
+                    <input type="submit" value="Register" name="Register" class="btn blue_btn" onclick="return Check();">
+                </div>
+            </form>
+        </div>
+    </div>
+  
+  
+</body>
+</html>

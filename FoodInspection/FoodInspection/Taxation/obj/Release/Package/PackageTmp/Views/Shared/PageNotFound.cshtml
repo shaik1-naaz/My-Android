@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "PageError";
+    var BaseController = ViewContext.Controller as Taxation.Controllers.BaseController;
+    var Role = BaseController.UserRole;
+    if (Role != 0)
+    {
+        Layout = Role == Core.UserType.Administrator ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_UserLayout.cshtml";
+    }
+    else
+    {
+        Layout = null;
+    }
+
+}
+
+
+<section class="aftrer_h">
+    <div class="container_m">
+        <div class="not_foud">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            Some Error Occured
+            <span>Please Try Again</span>
+        </div>
+        @if (Layout == null)
+        {
+            <div class="not_foud">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <span><a href="@Url.Action("Login","Account")">Please Login Again</a> </span>
+            </div>
+        }
+    </div>
+</section>

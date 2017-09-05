@@ -1,0 +1,239 @@
+﻿@model List<Core.CourseInsurance>
+@using Taxation.Helpers
+@{
+    ViewBag.Title = "User Tax Courses";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<section class="aftrer_h">
+    <div class="container_m">
+        <div class="prg_bar">
+
+            <h3>Progress</h3>
+            <div class="progress-wrap progress" data-progress-percent="@ViewBag.GraphPercent">
+                <div class="progress-bar progress" style="left: 300px;"></div>
+            </div>
+            <div class="tt_crs">  @ViewBag.GraphPercent  %</div>
+        </div>
+
+        <div class="tbs">
+            <ul class="tb_links">
+                <li class="active"><a href="#tab3">All Modules</a></li>
+                <li><a href="#tab1">Pending Modules</a></li>
+                <li><a href="#tab2">Completed Modules</a></li>
+            </ul>
+
+            <div class="tab_content">
+
+                <div id="tab3">
+                    <table class="curs_tbl">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td style="width:100px;text-align:center;">
+                                            @{
+
+                                    if (item.IsCompleted)
+                                    {
+                                        <i class="fa fa-check cmpl" aria-hidden="true"></i>
+                                    }
+                                    else
+                                    {
+                                        if (item.CurrentCourse)
+                                        {
+                                            <i class="fa fa-play-circle process" aria-hidden="true"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-lock lck" aria-hidden="true"></i>
+                                        }
+                                    }
+
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="sec_mk">
+                                                <span id="span_@item.Id" class="firstClick" onclick="GetSections(@item.Id)">
+                                                    <i class="fa fa-plus-circle"></i> @item.CourseName
+                                                </span>
+                                                <ul id="ul_@item.Id"></ul>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("View", "Training", "User",
+                                          new { Id = item.Id, CourseName = item.CourseName, CatalogId = item.CatalogId },
+                                                new { @class = "btn green" })
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div id="tab1" style="display:none;">
+                    <table class="curs_tbl">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>Name</th>
+                                <th>Tests</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int count = 1;
+                                foreach (var item in Model)
+                                {
+                                    if (!@item.IsCompleted)
+                                    {
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>
+                                                @item.CourseName
+                                            </td>
+                                            <td>@item.Tests</td>
+                                            <td>
+                                                @Html.ActionLink("View", "Training", "User",
+                                          new { Id = item.Id, CourseName = item.CourseName, CatalogId = item.CatalogId },
+                                                new { @class = "btn green" })
+                                            </td>
+                                        </tr>
+                                        count++;
+                                    }
+                                }
+
+                                if (count == 1)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.Raw("<b style='color: red'> No Courses to Complete </b>")
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div id="tab2" style="display:none;">
+                    <table class="curs_tbl">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>Name</th>
+                                <th>Tests</th>
+                                <th>Score</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (var item in Model)
+                                {
+                                    if (@item.IsCompleted)
+                                    {
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>
+                                                @item.CourseName
+                                            </td>
+                                            <td>@item.Tests</td>
+                                            <td><i class="fa fa-trophy cr_i"></i> @item.Score</td>
+                                            <td>
+                                                @Html.ActionLink("View", "Training", "User",
+                                          new
+                                          {
+                                              Id = item.Id,
+                                              CourseName = item.CourseName,
+                                              CatalogId = item.CatalogId
+                                          },
+                                                new { @class = "btn green" })
+                                            </td>
+                                        </tr>
+                                        i++;
+                                    }
+                                }
+
+                                if (i == 1)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.Raw("<b style='color: red'> No Course Completed yet </b>")
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('.sec_mk span').click(function () {
+            $(this).next().toggleClass('ds_mk_blc');
+            $(this).children().toggleClass('fa-minus-circle');
+            $(this).closest('tr').find('td').css('vertical-align', 'top');
+        });
+    });
+
+
+    function GetSections(id) {
+        debugger;
+
+        if ($('#span_' + id).hasClass('firstClick')) {
+            var data1 = JSON.stringify(id);
+
+            $.ajax({
+                url: '/User/GetSections',
+                type: 'POST',
+                data: '{ "data":' + data1 + '}',
+                contentType: 'application/json; charset=utf-8',
+                success: function (result) {
+                    debugger;
+                    if (result) {
+                        $('#ul_' + id).empty();
+                        $.each(result, function (index, value) {
+                            $('#ul_' + id).append('<li><i class="fa fa-arrow-circle-right"></i> <span><a href=/User/GetContent/'
+                                 + value.Id + '?SectionType=' + value.SectionType + '&SectionID='
+                                 + value.SectionID + '&CatalogId=' + value.CatalogId + '>' + value.SectionTitle + '</a></span></li>');
+                        });
+                        $('#span_' + id).removeClass('firstClick');
+                    }
+                },
+                error: function () {
+                    debugger;
+                    alert("error");
+                }
+            });
+        }
+    }
+
+</script>

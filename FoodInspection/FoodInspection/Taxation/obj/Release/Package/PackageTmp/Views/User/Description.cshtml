@@ -1,0 +1,106 @@
+﻿@using Taxation.Helpers
+@model Core.TaxCourse
+@{
+    ViewBag.Title = "Description";
+    Layout = "~/Views/Shared/_TrainingSteps.cshtml";
+}
+
+<div class="stp_rt">
+    <div id="step1" class="step_m" style="display:block;">
+        <h3 class="stp_title">@Model.SectionTitle</h3>
+        <div class="stp_bdy" id="divDesc">
+            @{
+                var BaseController = ViewContext.Controller as Taxation.Controllers.BaseController;
+                var User = BaseController.UserId;
+            }
+            @Html.Hidden("UserId", User, new { id = "userid" })
+            @Html.Raw(@Model.Text)
+        </div>
+        <div class="nxt_prv">
+            <span id="previous">
+                <i class="fa fa-arrow-circle-left"></i>
+                <input type="button" onclick="PreviousClick();" class="btn grey" value="Previous" />
+            </span>
+
+            <span id="next">
+                @Html.ActionLink("Next", "SectionTest", "User", new { Id = @Model.Id, SectionID = @Model.SectionID },
+                           new { @class = "btn blue_btn nxt_mk_c" })
+                <i class="fa fa-arrow-circle-right"></i>
+            </span>
+
+            @*<input type="button" onclick="NextClick();" class="btn blue_btn" value="Next" />*@
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        debugger;
+        $('#@Model.SectionID').attr('class', 'active');
+        // $('#divDesc a').fancybox();
+
+    });
+
+    $(function () {
+        $(".fancyFrame").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'iframe',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+
+        $(".fancyImage").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'image',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+    });
+
+    $('#divDesc a').click(function () {
+
+        var User = $('#userid').val();
+        var Path = $(this).attr('href');
+        var Type = $(this).attr('class');
+        var data = JSON.stringify({
+            ImagePath: Path,
+            UserId: User,
+            Class: Type
+        });
+        $.ajax({
+            url: '/User/ImageTracking',
+            type: 'POST',
+            data: data,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data == "Sucess") {
+                    $('#ul').append("<li><a class=" + Type + " href=" + Path + ">" + Path.substr(Path.lastIndexOf('/') + 1) + "</a></li>")
+                }
+            },
+        });
+    });
+
+
+    function NextClick() {
+        debugger;
+        var url = $('#@Model.SectionID').next().find('a').attr('href');
+        if (url !== undefined) {
+            window.location = url;
+        }
+    }
+
+    function PreviousClick() {
+
+        var url = $($('#@Model.SectionID').parent().parent().find('ul li')[$('#@Model.SectionID').index() - 1]).find('a').attr('href');
+        if (url !== undefined && url.indexOf("Admin/AddNewTest") != 1) {
+            window.location = url;
+        }
+    }
+</script>

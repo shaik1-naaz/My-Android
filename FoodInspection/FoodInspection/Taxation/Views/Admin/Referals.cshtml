@@ -1,0 +1,248 @@
+﻿@model List<Core.AgentReferences>
+@{
+    ViewBag.Title = "Referers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="aftrer_h">
+    @using (Html.BeginForm("ExportToExcell", "Admin",FormMethod.Post))
+    {
+        <div class="ex_dt">
+          <span>From Date </span><input type="date" name="FromDate"/>
+          <span> To Date </span> <input type="date" name="ToDate" />           
+            <span><i class="fa fa-file-excel-o"></i> <input type="submit" class="btn green" value="Export To Excel" /></span>
+        </div>
+    }
+
+    <div class="container_m">
+        <div class="tbl_adm">
+            <table id="reftable">
+                <thead>
+                    <tr>
+                        <th>Referer</th>
+                        <th>Referee</th>
+                        <th>Email</th>
+                        <th style="width:430px;">Status</th>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="referer" placeholder="Search By Referer"></td>
+                        <td><input type="text" id="referee" placeholder="Search By Referee"></td>
+                        <td><input type="text" id="email" placeholder="Search By Email"></td>
+                        <td class="sb_tbl_m">
+                            <table>
+                                <tr>
+                                    <td>Contacted</td>
+                                    <td>Is Intersted</td>
+                                    <td>Deal Accepted</td>
+                                    <td>Paid </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="src_act"><i class="fa fa-refresh"> </i><i class="fa fa-search"></i></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.FirstName @item.LastName</td>
+                            <td>@item.Email</td>
+                            <td class="sb_tbl_m">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" onchange="update(@item.ReferenceId,'IsContacted',this);"
+                                                       name="IsContacted" @(item.IsContacted.HasValue ? item.IsContacted.Value ? Html.Raw("checked='checked'") : null : null) />
+                                            </td>
+                                            <td>
+                                                @Html.DropDownList(item.ReferenceId.ToString(), EnumHelper.GetSelectList(typeof(Core.IsIntersted),
+                                              (Core.IsIntersted)item.IsInstersted), new { @class = "input_sec IsInterstedDDL" })
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" onchange="update(@item.ReferenceId,'IsResponded',this);"
+                                                       name="IsResponded" @(item.IsAccepted.HasValue ? item.IsAccepted.Value ? Html.Raw("checked='checked'") : null : null) />
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" onchange="update(@item.ReferenceId,'IsCommissionPaid',this);"
+                                                       name="IsCommissionPaid" @(item.IsPaid.HasValue ? item.IsPaid.Value ? Html.Raw("checked='checked'") : null : null) />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("RefereralInfo", "Admin", new { ReferenceId = item.ReferenceId })" class="btn_m">View</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+<script>
+
+    $(document).ready(function () {
+        $(".IsInterstedDDL").change(function () {
+            
+            var dID = $(this).val();
+            var id = $(this).attr('name');
+            if (dID==1) {
+                var contacted = true;
+                var interst = true;
+                var responded = null;
+                var paid = null;
+                var status = "Intersted in Deal, Waiting to Accept the Deal";
+            }
+            else {
+                var contacted = true;
+                var interst = false;
+                var responded = null;
+                var paid = null;
+                var status = "Not Intersted in the Deal";
+            }
+
+            var data = JSON.stringify({
+                IsContacted: contacted,
+                IsAccepted: responded,
+                IsPaid: paid,
+                IsInstersted: interst,
+                ReferenceId: id,
+                Status: status
+            });
+
+            $.ajax({
+                url: '/Admin/UpdateColumn',
+                type: 'POST',
+                data: data,
+                contentType: 'application/json; charset=utf-8',
+                error: function () {
+                    alert("Values Not Updated, Please Try Again");
+                }
+            });
+        });
+    });
+
+    function update(id,value,ischeck) {
+        
+        var checked = $(ischeck).is(':checked');
+        var contacted=false;
+        var responded=false;
+        var paid=false;
+        var interst=false;
+        var status="";
+
+        if (checked) {
+            switch (value) {
+                case 'IsContacted':
+                    contacted=true;
+                    interst=2;
+                    responded=null;
+                    paid=null;
+                    status="Contacted and Waiting for Interst";
+                    break;
+
+                case 'IsResponded':
+                    contacted=true;
+                    interst=true;
+                    responded=true;
+                    paid=null;
+                    status="Accepted the Deal, Waiting to Pay Amount";
+                    break;
+                case 'IsCommissionPaid':
+                    contacted=true;
+                    interst=true;
+                    responded=true;
+                    paid=true;
+                    status="Payment Paid";
+                    break;
+
+            }
+        }
+
+        else {
+            switch (value) {
+                case 'IsContacted':
+                    contacted=false;
+                    interst=null;
+                    responded=null;
+                    paid=null;
+                    status="Not Yet Contacted";
+                    break;
+
+                case 'IsResponded':
+                    contacted=true;
+                    interst=true;
+                    responded=false;
+                    paid=null;
+                    status="Not Intersted in Deal, Deal Rejected";
+                    break;
+                case 'IsCommissionPaid':
+                    contacted=true;
+                    interst=true;
+                    responded=true;
+                    paid=false;
+                    status="Payment was not Done or Failed";
+                    break;
+            }
+        }
+
+        var data = JSON.stringify({
+            IsContacted: contacted,
+            IsAccepted: responded,
+            IsPaid:paid,
+            IsInstersted:interst,
+            ReferenceId:id,
+            Status:status
+        });
+        $.ajax({
+            url: '/Admin/UpdateColumn',
+            type: 'POST',
+            data: data,
+            contentType: 'application/json; charset=utf-8',
+            error: function () {
+                alert("Values Not Updated, Please Try Again");
+            }
+        });
+    }
+
+
+    $(document).ready(function () {
+
+        $('#referer').keyup(function () {
+            
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#referee').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#email').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('table tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+    });
+</script>

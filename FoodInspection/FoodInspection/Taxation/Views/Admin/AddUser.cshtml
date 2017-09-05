@@ -1,0 +1,67 @@
+﻿@model Core.UserModel
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<section class="aftrer_h">
+    <div class="container_m">
+        <div class="add_new">
+            <h3>
+                <a href="@Url.Action("Users", "Admin")"><i class="fa fa-arrow-circle-left"></i> Add New User</a>
+
+            </h3>
+            <div class="add_new_body">
+                <form method="post" id="registerid">
+                    <div class="input_sec">
+                        <label>First Name</label>
+                        @Html.TextBoxFor(m => m.FirstName, new { MaxLength = "50" })
+                    </div>
+                    <div class="input_sec">
+                        <label>Last Name</label>
+                        @Html.TextBoxFor(m => m.LastName, new { MaxLength = "50" })
+                    </div>
+                    <div class="input_sec gnd">
+                        <b>Gender</b>
+                        @Html.RadioButtonFor(m => m.Gender, Core.Gender.Male, new { id = Core.Gender.Male, @checked = "true" })
+                        @Core.Gender.Male
+                        @Html.RadioButtonFor(m => m.Gender, Core.Gender.Female, new { id = Core.Gender.Female, style = "margin-left: 65px;" })
+                        @Core.Gender.Female
+
+                    </div>
+                    <div class="input_sec">
+                        <label>User Name</label>
+                        @Html.TextBoxFor(m => m.UserName, new { MaxLength = "50" })
+                    </div>
+                    <div class="input_sec">
+                        <label>Email</label>
+                        @Html.TextBoxFor(m => m.Email, new { MaxLength = "50" })
+                    </div>
+                    <div class="input_sec">
+                        <label>Password</label>
+                        @Html.PasswordFor(m => m.Password, new { MaxLength = "50" ,id="password"})
+
+                    </div>
+                    <div class="input_sec">
+                        <label>Confirm Password</label>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { MaxLength = "50" })
+
+                    </div>
+                    <div class="input_sec">
+                       @Html.DropDownList("UserType", EnumHelper.GetSelectList(typeof(Core.UserType)), "Select User Type")
+                    </div>
+                    <div class="lgn_btns">
+                        @Html.ActionLink("Cancle", "Users", "Admin", null, new { @class = "btn grey" })
+                        <input type="submit" value="Register" name="Register" class="btn blue_btn" onclick="return Check();">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery-Validations.js"></script>
+<link href="~/Scripts/jquery-ui.min.css" rel="stylesheet" />
+
+

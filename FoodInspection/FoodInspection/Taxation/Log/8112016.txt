@@ -1,0 +1,45 @@
+*************************---------------------------**************************
+Data Time:8/11/2016 10:57:24 AM
+Exception Name:The parameters dictionary contains a null entry for parameter 'data' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCardNumber(Int32)' in 'Taxation.Controllers.AccountController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 10:57:28 AM
+Exception Name:The parameters dictionary contains a null entry for parameter 'data' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCardNumber(Int32)' in 'Taxation.Controllers.AccountController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 10:57:31 AM
+Exception Name:The parameters dictionary contains a null entry for parameter 'data' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCardNumber(Int32)' in 'Taxation.Controllers.AccountController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 10:58:35 AM
+Exception Name:The parameters dictionary contains a null entry for parameter 'data' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCardNumber(Int32)' in 'Taxation.Controllers.AccountController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 10:59:13 AM
+Exception Name:The parameters dictionary contains a null entry for parameter 'data' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCardNumber(Int32)' in 'Taxation.Controllers.AccountController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 11:19:39 AM
+Exception Name:LINQ to Entities does not recognize the method 'Int32 ToInt32(System.String)' method, and this method cannot be translated into a store expression.
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 11:20:56 AM
+Exception Name:LINQ to Entities does not recognize the method 'Int32 ToInt32(System.String)' method, and this method cannot be translated into a store expression.
+Event Name:GetCardNumber
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/11/2016 2:04:38 PM
+Exception Name:The controller for path '/__browserLink/requestData/5b45292eb1724980ac3843e08b9786b2' was not found or does not implement IController.
+Event Name:requestData
+Control Name:__browserLink

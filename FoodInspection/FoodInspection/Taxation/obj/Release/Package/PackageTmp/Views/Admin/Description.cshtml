@@ -1,0 +1,139 @@
+﻿@model Core.TaxCourse
+@{
+    ViewBag.Title = "Description";
+    Layout = "~/Views/Shared/_CourseSteps.cshtml";
+}
+
+<script src="~/Scripts/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="~/Scripts/jquery.fancybox.pack.js"></script>
+<link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+
+<script>
+
+    $(document).ready(function () {
+        tinymce.init({
+            selector: '#txtDesc',
+            plugins: "image code link textcolor",
+            toolbar: "fontselect fontsizeselect italic bold forecolor backcolor bullist numlist",        
+            max_height: 500,
+            max_width: 500,
+            min_height: 100,
+            min_width: 400
+        });
+    });
+
+</script>
+<style>
+    #txtDesc_ifr {
+        box-sizing: border-box;
+        min-height: 240px;
+        display: block;
+        max-height: 250px;
+    }
+</style>
+
+<div class="stp_rt">
+
+  
+    @*<a href="sectiontest" class="btn green"></a>*@
+   
+    <div id="step1" class="step_m" style="display:block;">
+
+        @using (@Html.BeginForm("Description", "Admin", FormMethod.Post, new { @id = "descform" , style="height: 100%;" }))
+        {
+            <input type="hidden" name="SectionID" value="@Model.SectionID" />
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <h3 class="stp_title">
+                <span>@Model.SectionTitle</span>
+                <div class="edt_btns">
+                    <span>@Html.ActionLink("Add section test", "AddSectionTest", "Admin", new { Id = Model.Id, SectionID = Model.SectionID }, new { @class = "btn green", style = "background: rgba(0, 0, 0, 0.25) !important;" })<i class="fa fa-plus-circle"></i></span>
+                    <span><input type="reset" value="Cancel" name="Cancel" onclick="GetText();" class="btn ed_sh btn_cl"><i class="fa fa-times ed_sh"></i></span>
+                   <span> <input id="btnUpdate" type="submit" value="Update" name="Command" class="btn ed_sh"><i class="fa fa-check ed_sh"></i></span>
+                   <span> <input type="submit" class="btn dlt" style="background: rgba(255, 0, 0, 0.54);" name="Command" value="Delete">
+                       <i class="fa fa-trash-o"></i></span>
+                    <span>
+                    <input type="button" class="btn ed_hd" value="Edit" onclick="GetEditor();"><i class="fa fa-pencil ed_hd"></i>
+                        </span>
+                </div>
+            </h3>
+
+            <div class="stp_bdy">
+                <div id="divEdit" style="display:none;">
+                    @Html.TextArea("Text",Model.Text, new { id = "txtDesc" })
+                </div>
+
+                <div id="divDesc">
+                    @Html.Raw(@Model.Text)
+                </div>
+
+            </div>
+            <div class="nxt_prv">
+                <span><i class="fa fa-arrow-circle-left"></i> <input type="button" onclick="PreviousClick();" class="btn grey" value="Previous" /></span>
+                <span><i class="fa fa-arrow-circle-right"></i><input type="button" onclick="NextClick();" class="btn blue_btn" value="Next" /></span>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#@Model.SectionID').attr('class', 'active');
+    });
+
+    $(function () {
+        $(".fancyFrame").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'iframe',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+
+        $(".fancyImage").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'image',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+    });
+
+    function GetEditor() {
+        
+        $('#divEdit').show();
+        $('#divDesc').hide();
+
+        tinymce.init({
+            selector: '#txtDesc'
+        });
+       
+    }
+
+    function GetText() {
+        
+        $('#divEdit').hide();
+        $('#divDesc').show();
+    }
+
+    function NextClick() {
+       
+        var url = $('#@Model.SectionID').next().find('a').attr('href');
+        if (url !== undefined) {
+            window.location = url;
+        }
+    }
+
+    function PreviousClick() {
+        
+        var url = $($('#@Model.SectionID').parent().parent().find('ul li')[$('#@Model.SectionID').index() - 1]).find('a').attr('href');
+        if (url !== undefined && url.indexOf("Admin/AddNewTest") != 1) {
+            window.location = url;
+        }
+    }
+</script>
+
+

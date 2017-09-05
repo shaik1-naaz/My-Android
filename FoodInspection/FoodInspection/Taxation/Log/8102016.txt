@@ -1,0 +1,70 @@
+*************************---------------------------**************************
+Data Time:8/10/2016 11:01:24 AM
+Exception Name:A public action method 'alskdjalskdjla;skjl;askdj' was not found on controller 'Taxation.Controllers.UserController'.
+Event Name:alskdjalskdjla;skjl;askdj
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/10/2016 11:01:44 AM
+Exception Name:A public action method 'asdlkjasdjlkasdjlaksdjlkas,mxzcn' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:asdlkjasdjlkasdjlaksdjlkas,mxzcn
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:8/10/2016 11:02:41 AM
+Exception Name:A public action method 'asdhjsakjdhasd' was not found on controller 'Taxation.Controllers.AdminController'.
+Event Name:asdhjsakjdhasd
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:8/10/2016 11:03:03 AM
+Exception Name:A public action method 'askldjhaskljdzxm,cb' was not found on controller 'Taxation.Controllers.UserController'.
+Event Name:askldjhaskljdzxm,cb
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/10/2016 11:53:53 AM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:SectionTest
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/10/2016 11:54:08 AM
+Exception Name:Object reference not set to an instance of an object.
+Event Name:SectionTest
+Control Name:User
+*************************---------------------------**************************
+Data Time:8/10/2016 12:50:12 PM
+Exception Name:The controller for path '/__browserLink/requestData/d3b652b247934d118b27458546125f08' was not found or does not implement IController.
+Event Name:requestData
+Control Name:__browserLink
+*************************---------------------------**************************
+Data Time:8/10/2016 1:22:44 PM
+Exception Name:The action 'CardDetails' is accessible only by a child request.
+Event Name:CardDetails
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 2:49:07 PM
+Exception Name:e:\New folder\Taxation\src\Taxation\Views\Account\Plans.cshtml(37): error CS0839: Argument missing
+Event Name:Plans
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 5:32:43 PM
+Exception Name:e:\New folder\Taxation\src\Taxation\Views\Account\Profile.cshtml(188): error CS1928: 'System.Web.Mvc.UrlHelper' does not contain a definition for 'ActionLink' and the best extension method overload 'System.Web.Mvc.Html.LinkExtensions.ActionLink(System.Web.Mvc.HtmlHelper, string, string)' has some invalid arguments
+Event Name:Profile
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 5:33:54 PM
+Exception Name:The model item passed into the dictionary is of type 'System.Linq.Enumerable+WhereSelectListIterator`2[DataAccess.Plan,Core.SubscriptionPlans]', but this dictionary requires a model item of type 'System.Collections.Generic.List`1[Core.SubscriptionPlans]'.
+Event Name:Plans
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 6:37:34 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:CardDetails
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 6:41:34 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:CardDetails
+Control Name:Account
+*************************---------------------------**************************
+Data Time:8/10/2016 6:57:37 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:CardDetails
+Control Name:Account

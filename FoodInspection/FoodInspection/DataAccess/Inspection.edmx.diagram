@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e90ca68a7ed344b99985b117aa00bc1c" Name="Diagram1">
+        <EntityTypeShape EntityType="InspectionModel.Address" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.Branch" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.Category" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.Inspection" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.Role" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.ShiftTime" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.Type" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.UserCredential" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InspectionModel.UserDetail" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="InspectionModel.FK_Branch_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_UserDetails_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_Inspection_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_UserCredentials_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_Types_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_Inspection_ShiftTimes" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_Inspection_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_UserCredentials_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="InspectionModel.FK_UserDetails_UserDetails" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

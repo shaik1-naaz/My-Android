@@ -1,0 +1,273 @@
+﻿@model Core.UserModel
+@{
+    ViewBag.Title = "Profile";
+    var BaseController = ViewContext.Controller as Taxation.Controllers.BaseController;
+    var Role = BaseController.UserRole;
+    var IsAdmin = BaseController.IsAdmin;   
+    var Redirect = string.Empty;
+    if (Role == Core.UserType.Administrator)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+}
+
+<script src="~/Scripts/jquery.fancybox.pack.js"></script>
+<link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+
+<section class="aftrer_h_pr">
+    <div class="pr_bg"></div>
+    <div class="container_m">
+        <div class="prf_img">
+            @{
+                var controller = ViewContext.Controller as Taxation.Controllers.BaseController;
+            }
+            <a href="@Url.Action("Photo", "Account", new { UserId = controller.UserId })" class="fancyImage">
+                <img id="image" src="@Url.Action("Photo", "Account", new { UserId = controller.UserId })"
+                     onerror="this.onerror = null; this.src = '../../Images/no_image_thumb.gif'" />
+            </a>
+
+            <span class="img_upld">
+                <input type="file" name="Image" id="file">
+                <button class="cng_img">Change Image</button>
+            </span>
+
+            <div class="pr_nm">
+                @Model.FirstName  @Model.LastName
+            </div>
+
+            <button type="button" class="btn edit_pr">
+                <i class="fa fa-pencil"></i> Edit Profile
+            </button>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container_m">
+        <table class="prf_tbl">
+            @using (Html.BeginForm("Profile", "Account", FormMethod.Post, new { id = "updateDetails" }))
+            {
+
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.FirstName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Middle Name</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.MiddleName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.LastName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Phone)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" value="@Model.Password" readonly="readonly" />
+                        <button type="button" class="btn blue_btn cng_pwd">Change Password</button>
+                    </td>
+                </tr>
+                <tr class="pwd_cng">
+                    <td colspan="2">
+                        <table>
+                            <tr>
+                                <td>New Password</td>
+                                <td>
+                                    @Html.PasswordFor(x => x.NewPassword, new { id = "password" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Confirm Password</td>
+                                <td>
+                                    @Html.PasswordFor(x => x.ConfirmPassword)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button type="button" class="btn grey dsn_pwd">
+                                        <i class="fa fa-times"></i>
+                                        Cancel
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Address)
+                    </td>
+                </tr>
+                <tr>
+                    <td> State </td>
+                    <td>
+                        <div id="SelectState">
+                            @Html.DropDownList("State", EnumHelper.GetSelectList(typeof(Core.States)), "Select State", new { disabled = "disabled" })
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>ZipCode</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.ZipCode)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn grey dsn_frm">
+                            <i class="fa fa-times"></i>
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn green sv_pf">
+                            <i class="fa fa-check"></i>
+                            Update
+                        </button>
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+
+     @if (!IsAdmin)
+     {
+        <div class="c_card c_card_new">
+            <div class="cur_sub">
+                <h3>Current Subscription</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Current plan </td>
+                            <td>@Model.PlanName </td>
+                        </tr>
+                        <tr>
+                            <td>Subscribed On </td>
+                            <td>@Model.SubscribedOn</td>
+                        </tr>
+                        <tr>
+                            <td>Validity Till </td>
+                            <td>@Model.ValidTill</td>
+                        </tr>
+                        <tr>
+                            <td>Days Remaining </td>
+                            <td>@((Convert.ToDateTime(@Model.ValidTill) - Convert.ToDateTime(@Model.SubscribedOn)).Days)</td>
+                        </tr>
+                        <tr>
+                            <td>Is Trail Period </td>
+                            <td>@(Model.IsTrailPeriod ? @Html.Raw("<b>Yes</b>") : @Html.Raw("No")) </td>
+                        </tr>
+                        <tr>
+                            <td>Is Expired </td>
+                            <td>@(Model.IsExpired ? Html.Raw("<b>Yes</b>") : Html.Raw("No"))</td>
+                        </tr>
+                        <tr>
+                            <td>Test Accessibility </td>
+                            <td>@Model.TestAccessbility</td>
+                        </tr>
+                        <tr>
+                            <td>Support </td>
+                            <td>@Model.Support</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center; padding: 20px 0 10px;">
+                                <a href="@Url.Action("Plans","Account")" class="btn blue_btn">Upgrade</a>
+
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+     }
+        
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+    $(function () {
+        $(".fancyImage").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'image',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#file").change(function () {
+        readURL(this);
+        var $file = document.getElementById('file'),
+         $formData = new FormData();
+
+        if ($file.files.length > 0) {
+            for (var i = 0; i < $file.files.length; i++) {
+                $formData.append('file-' + i, $file.files[i]);
+            }
+        }
+
+        $.ajax({
+            url: '@Url.Action("UploadImage", "Account")',
+            type: 'POST',
+            data: $formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function ($data) {
+                if ($data == "Failure") {
+                    alert("Image Upload Failed, Please Try Again");
+                }
+            }
+        });
+    });
+
+</script>

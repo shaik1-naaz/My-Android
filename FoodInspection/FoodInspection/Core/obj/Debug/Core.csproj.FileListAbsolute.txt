@@ -1,0 +1,76 @@
+E:\New folder\Taxation\src\Core\bin\Debug\Core.dll.config
+E:\New folder\Taxation\src\Core\bin\Debug\Core.dll
+E:\New folder\Taxation\src\Core\bin\Debug\Core.pdb
+E:\New folder\Taxation\src\Core\bin\Debug\EntityFramework.dll
+E:\New folder\Taxation\src\Core\bin\Debug\EntityFramework.SqlServer.dll
+E:\New folder\Taxation\src\Core\bin\Debug\Microsoft.CSharp.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Data.DataSetExtensions.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Data.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Net.Http.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Runtime.Serialization.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Security.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Web.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Web.Http.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Web.Mvc.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Xml.dll
+E:\New folder\Taxation\src\Core\bin\Debug\System.Xml.Linq.dll
+E:\New folder\Taxation\src\Core\bin\Debug\Newtonsoft.Json.dll
+E:\New folder\Taxation\src\Core\bin\Debug\EntityFramework.xml
+E:\New folder\Taxation\src\Core\bin\Debug\EntityFramework.SqlServer.xml
+E:\New folder\Taxation\src\Core\bin\Debug\System.Web.Http.xml
+E:\New folder\Taxation\src\Core\bin\Debug\System.Web.Mvc.xml
+E:\New folder\Taxation\src\Core\obj\Debug\Core.Resource1.resources
+E:\New folder\Taxation\src\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+E:\New folder\Taxation\src\Core\obj\Debug\Core.dll
+E:\New folder\Taxation\src\Core\obj\Debug\Core.pdb
+E:\New folder\Taxation\src\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\Core.dll.config
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\Core.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\Core.pdb
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\EntityFramework.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\Microsoft.CSharp.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Data.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Net.Http.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Security.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Web.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Xml.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Xml.Linq.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\EntityFramework.xml
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Web.Http.xml
+C:\Users\itoadmin\Downloads\Taxation\Core\bin\Debug\System.Web.Mvc.xml
+C:\Users\itoadmin\Downloads\Taxation\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\itoadmin\Downloads\Taxation\Core\obj\Debug\Core.dll
+C:\Users\itoadmin\Downloads\Taxation\Core\obj\Debug\Core.pdb
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\Core.dll.config
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\Core.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\Core.pdb
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\EntityFramework.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\EntityFramework.SqlServer.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\Microsoft.CSharp.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Data.DataSetExtensions.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Data.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Net.Http.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Runtime.Serialization.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Security.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Web.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Xml.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Xml.Linq.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\Newtonsoft.Json.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\EntityFramework.xml
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\EntityFramework.SqlServer.xml
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Web.Http.xml
+E:\food safety database\FoodInspection\FoodInspection\Core\bin\Debug\System.Web.Mvc.xml
+E:\food safety database\FoodInspection\FoodInspection\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+E:\food safety database\FoodInspection\FoodInspection\Core\obj\Debug\Core.dll
+E:\food safety database\FoodInspection\FoodInspection\Core\obj\Debug\Core.pdb

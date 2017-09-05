@@ -1,0 +1,164 @@
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\ApplicationInsights.config
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\csc.exe
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\vbc.exe
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\VBCSCompiler.exe
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\FoodInspection.dll.config
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\FoodInspection.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\FoodInspection.pdb
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Antlr3.Runtime.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\EntityFramework.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\EntityFramework.SqlServer.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.Web.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.ApplicationInsights.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Newtonsoft.Json.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Owin.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Helpers.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Mvc.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Optimization.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Razor.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.Deployment.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.Razor.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\WebGrease.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.Web.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.ApplicationInsights.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Helpers.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Mvc.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Optimization.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.Razor.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.Deployment.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\System.Web.WebPages.Razor.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Antlr3.Runtime.pdb
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Newtonsoft.Json.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\EntityFramework.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\EntityFramework.SqlServer.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\obj\Debug\FoodInspection.csprojResolveAssemblyReference.cache
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\obj\Debug\FoodInspection.dll
+C:\Users\itoadmin\Downloads\Taxation\FoodInspection\obj\Debug\FoodInspection.pdb
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\ApplicationInsights.config
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\csc.exe
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\System.Collections.Immutable.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\System.Reflection.Metadata.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\vbc.exe
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\VBCSCompiler.exe
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\roslyn\VBCSCompiler.exe.config
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\FoodInspection.dll.config
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\FoodInspection.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\FoodInspection.pdb
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Antlr3.Runtime.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\EntityFramework.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\EntityFramework.SqlServer.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.Agent.Intercept.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.DependencyCollector.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.Web.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.WindowsServer.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.ApplicationInsights.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.Core.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Cookies.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Facebook.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Google.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.OAuth.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Twitter.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Web.Infrastructure.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Newtonsoft.Json.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Owin.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Helpers.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Mvc.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Optimization.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Razor.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.Deployment.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.Razor.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\WebGrease.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.DependencyCollector.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.Web.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AI.WindowsServer.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.ApplicationInsights.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Helpers.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Mvc.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Optimization.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.Razor.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.Deployment.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\System.Web.WebPages.Razor.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Antlr3.Runtime.pdb
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Newtonsoft.Json.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\EntityFramework.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\EntityFramework.SqlServer.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.Core.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Facebook.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Cookies.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.OAuth.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Google.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.Twitter.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\obj\Debug\FoodInspection.csprojResolveAssemblyReference.cache
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\obj\Debug\FoodInspection.dll
+E:\food safety database\FoodInspection\FoodInspection\FoodInspection\obj\Debug\FoodInspection.pdb

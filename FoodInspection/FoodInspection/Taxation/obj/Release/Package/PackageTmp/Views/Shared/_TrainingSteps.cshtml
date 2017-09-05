@@ -1,0 +1,97 @@
+﻿@using Taxation.Helpers
+@{
+    //ViewBag.Title = "_TrainingSteps";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    List<Core.TaxCourse> data = ViewBag.CourseSections;
+
+}
+
+<script src="~/Scripts/jquery.fancybox.pack.js"></script>
+<link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        $('.evts_show span').click(function () {
+            $('.rct_evt').toggle();
+        });
+    });
+</script>
+<section class="stp_sec">
+    <div class="stp_hd"> @(data.Count > 0 ? data[0].CourseName : string.Empty) </div>
+    <div class="stp">
+        <div class="stp_lt">
+            <ul>             
+                @foreach (var item in data)
+                {
+                    if (item.SectionTitle != null)
+                    {
+                        <li id="@item.SectionID">
+                            <i class="fa fa-check-circle cmp_sec_mk" id="done_@item.SectionID"  @( @item.IsCompleted == true ? "style = display:block" : "style = display:none")></i>
+                            @Html.ActionLink(item.SectionTitle, "GetContent", "User",
+                          new { SectionType = item.SectionType, Id = item.Id, SectionID = item.SectionID, CatalogId = data[0].CatalogId }, null)
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        @RenderBody()
+
+    </div>
+
+    <div class="tst">
+        <span class="evts_show">
+            <span>Recently Opened Links</span>
+            <div class="rct_evt">
+                @{
+                    List<DataAccess.ImageTracking> collection = ViewBag.Images;
+                    <ul id="ul">
+                        @foreach (var item in collection)
+                        {
+                            <li><a class="@item.Class" href="@item.ImagePath">@item.ImagePath.Substring(@item.ImagePath.LastIndexOf('/') + 1)</a></li>
+                        }
+                    </ul>
+                }
+            </div>
+        </span>
+        @{
+            var role = ViewContext.Controller as Taxation.Controllers.BaseController;
+            if (data[0].CatalogId != (int)Core.CourseCatalog.Insurance && role.UserRole != Core.UserType.InsuranceAgent)
+            {
+                <a href="@Url.Action("TakeTest", "Test", new { CourseId = data[0].Id})" class="btn green">
+                    <i class="fa fa-file"></i> Take Test
+                    @*<a href="@Url.Action("TakeTest","User")">*@
+                    @*<button class="btn green">
+                        <i class="fa fa-file"></i> Take Test
+                    </button>*@
+                </a>
+            }
+        }
+    </div>
+    
+
+</section>
+<script>
+    
+    $(function () {
+        $(".fancyFrame").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'iframe',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+
+        $(".fancyImage").fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            autoSize: true,
+            type: 'image',
+            iframe: {
+                preload: false // fixes issue with iframe and IE
+            }
+        });
+    });
+</script>

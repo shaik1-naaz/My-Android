@@ -1,0 +1,113 @@
+﻿@model List<Core.AgentReferences>
+@{
+    ViewBag.Title = "Reference";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<section class="aftrer_h">
+    <div class="container_m">
+        <div style="text-align:right;">
+            <a href="@Url.Action("AddReference", "User", new { @Id=0 })" class="btn blue_btn"><i class="fa fa-plus-circle"></i> Add New Reference</a>
+        </div>
+        <table class="user_ref_det">
+            <tbody>
+                <tr>
+                    <th>Total References</th>
+                    <th>Contacted</th>
+                    <th>Deal Accepted</th>
+                    <th>Paid</th>
+                    <th>Not Contacted</th>
+                </tr>
+
+                <tr>
+                    <td>@ViewBag.TotalReference</td>
+                    <td>@ViewBag.Contacted</td>
+                    <td>@ViewBag.DealAccepted</td>
+                    <td>@ViewBag.Paid</td>
+                    <td>@ViewBag.NotContacted</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="tbl_adm">
+            <table id="reftable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th style="width:180px;">State</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="name"  placeholder="Search By Name"></td>
+                        <td><input type="text" id="email" placeholder="Search By Email"></td>
+                        <td><input type="text" id="phone" placeholder="Search By Phone"></td>
+                        <td><input type="text" id="state" placeholder="Search By State"></td>
+                        <td></td>
+                        <td class="src_act"><i class="fa fa-refresh"> </i><i class="fa fa-search"></i></td>
+                    </tr>
+                </thead>
+                <tbody>                   
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>@( item.State != "" ? Enum.Parse(typeof(Core.States), item.State) : @Html.Raw("<font color = 'Red'>-- None Selected --</font>"))</td>
+                            <td>
+                                <b>@item.Status</b> 
+                            </td>
+                            <td><a href="@Url.Action("RefereralInfo", "User", new { ReferenceId = item.ReferenceId })" class="btn_m">View</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+                
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+       
+        $('#name').keyup(function () {
+           
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('#reftable tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#email').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('#reftable tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#phone').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('#reftable tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+        $('#state').keyup(function () {
+            var val = $(this).val().toLowerCase();
+            $('#reftable tbody tr').hide();
+            $('.sb_tbl_m table tr').css('display', 'table-row');
+            var trs = $('#reftable tbody tr').filter(function (d) {
+                return $(this).text().toLowerCase().indexOf(val) != -1;
+            });
+            trs.show();
+        });
+             
+    });
+</script>

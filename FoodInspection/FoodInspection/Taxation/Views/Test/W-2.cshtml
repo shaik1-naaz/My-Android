@@ -1,0 +1,181 @@
+﻿@{
+    //ViewBag.Title = "_TrainingSteps";
+    Layout = "~/Views/User/TakeTest.cshtml";
+
+}
+
+<style>
+    .frm_tbl.qsn.scD.ltbl > table tr td > input{
+ width:90%;
+ margin-left:2px;
+}
+
+.ex_inp input {
+    display: inline-block;
+    width: 100px;
+    background: #f1f4ff;
+    border: 0;
+}
+
+.ex_inp span {
+    display: inline-block;
+    width: 80px;
+}
+.bor_bot0{
+ border-bottom:0 !important;
+}
+
+.bor0{
+ border:0px solid #bbb !important;
+}
+
+</style>
+<div class="frm_tbl qsn scD ltbl">
+ 
+    <table border="1" style="width:50%;padding:0;font-size:10pt;">
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <span>
+                        <b>a </b>
+                        Employee’s social security number
+                        <div class="draggable" id="divSSNumber">123-45-678</div>
+                    </span>
+                    <span>
+                        OMB No. 1545-0008
+                    </span>
+                    <span>
+                        <b>
+                            Safe, accurate, FAST! Use
+                        </b>
+                    </span>
+                    <span>Visit the IRS website at <a href="www.irs.gov/efile">www.irs.gov/efile</a> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>b</b> Employer identification number (EIN)<div class="draggable" id="idnum">54-9865412</div></td>
+                <td><b>1</b> Wages, tips, other compensation<div id="compensation" class="draggable">150,000</div></td>
+                <td><b>2</b> Federal income tax withheld<div class="draggable" id="federaltax">50,000</div></td>
+            </tr>
+            <tr>
+                <td rowspan="3"><b>c</b> Employer’s name, address, and ZIP code<div id="address" class="draggable">NETFLIX <br>25058 5th AVE<br> GREENSBORROW NC 28520</div></td>
+                <td><b>3</b> Social security wages<div id="wages" class="draggable">118,500</div></td>
+                <td><b>4</b> Social security tax withheld<div class="draggable" id="sectax">7,374</div></td>
+            </tr>
+
+            <tr>
+                <td><b>5</b> Medicare wages and tips<div class="draggable" id="medicare">150,000</div></td>
+                <td><b>6</b> Medicare tax withheld<div class="draggable" id="medicaretax">2,175</div></td>
+            </tr>
+
+            <tr>
+                <td><b>7</b> Social security tips<div class="draggable" id="security"></div></td>
+                <td><b>8</b> Allocated tips<div class="draggable" id="Allocated"></div></td>
+            </tr>
+
+            <tr>
+                <td><b>d</b>  Control number<div class="draggable" id="Control"></div></td>
+                <td><b>9</b> </td>
+                <td><b>10</b>  Dependent care benefits<div class="draggable" id="care">50,000</div></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="brd_bt"><b>e</b>   Employee’s first name and initial and Last name
+                    <div class="draggable" id="divFirstName">Suff.JAMES</div>
+                    <div class="draggable" id="divLastName">BOND</div>
+                </td>
+                <td><b>11</b> Nonqualified plans<div class="draggable" id="plan"></div></td>
+                <td><b>12a</b>  See instructions for box 12 <div class="draggable" id="box">50,000</div></td>
+            </tr>
+
+            <tr>
+                <td class="inp_td"><b>13</b> <span>Statutory employee<br><input type="checkbox"></span><span>Retirement plan<br><input type="checkbox"></span><span>Third-party sick pay<br><input type="checkbox"></span></td>
+                <td><b>12b</b>  </td>
+            </tr>
+            <tr>
+                <td rowspan="3" class="no_brd_tp" style="vertical-align: bottom;">
+                    <b>f</b> Employee’s address and ZIP code <div class="draggable" id="address"></div>
+                </td>
+                <td rowspan="3"><b>14</b> Other<div class="draggable" id="Other"></div></td>
+                <td><b>12c</b></td>
+            </tr>
+            <tr>
+                <td><b>12d</b></td>
+            </tr>
+            <tr>
+                <td><b></b></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="inr_tbl">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><b>15</b>  State Employer’s state ID numbe</td>
+                                <td><b>16</b>  State wages, tips, etc.<div class="draggable" id="statewages">150,000</div></td>
+                                <td><b>17</b>   State income tax <div class="draggable" id="stateincome">13,000</div></td>
+                                <td><b>18</b>   Local wages, tips, etc.</td>
+                                <td><b>19</b>   Local income tax</td>
+                                <td><b>20</b>   Locality name</td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+            
+       
+      
+
+            
+        
+ 
+
+
+
+
+
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#form1098').click(function () {
+                var add = $("#address").text();
+                var secno = $("#secno").text();
+                var payerinte = $("#payerinte").text();
+                var payrname = $("#payrname").text();
+                var payradd = $("#payradd").text();
+                var payrcountry = $("#payrcountry").text();
+                var principal = $("#principal").text();
+                var interest = $("#interest").text();
+                var account = $("#account").text();
+                var four = $("#four").text();
+                var five = $("#five").text();
+                var idefno = $('#idefno').text();
+                debugger;
+                if (add == "" || secno == "" || payerinte == "" || payrname == "" || payradd == "" || payrcountry == "" ||
+                    principal == "" || interest == "" || account == "" || four == "" || five == "" || idefno == "") {
+                    alert("Plese fill all the details in the form")
+                }
+                else {
+
+                }
+            });
+        });
+    </script>*@
+
+
+
+

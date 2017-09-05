@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/styles")
+    @Scripts.Render("~/Scripts/Jquery")
+    @Scripts.Render("~/Scripts/Script")
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <header class="row_m">
+        <a href="~/Admin/Users">
+            <div class="logo fleft">
+                Tax <span>Training</span>
+            </div>
+        </a>
+        <div class="nav_menu fright">
+            <ul>
+                <li id="liUsers">@Html.ActionLink("Users", "Users", "Admin")</li>
+                <li id="liTaxCourse">@Html.ActionLink("Tax Course", "TaxCourse", "Admin")</li>
+                <li id="liInsurance">@Html.ActionLink("Insurance", "Insurance", "Admin")</li>
+                <li id="liReference">@Html.ActionLink("Referals", "Referals", "Admin")</li>
+                <li class="notf_m">
+                    <i class="fa fa-bell" style="FONT-SIZE: 25PX;"></i>
+                    <h5>@Html.Action("GetNotificationCount","Admin")</h5>
+                    <div class="notf_shw">
+                        @Html.Action("Notifications","Admin")
+                    </div>
+                </li>
+                <li class="pr_lg">
+                    @{
+                        var controller = ViewContext.Controller as Taxation.Controllers.BaseController;
+                    }
+                    <img src="@Url.Action("Photo", "Account", new { UserId = controller.UserId })" onerror="this.onerror = null; this.src = '../../Images/no_image_thumb.gif'" />
+                    <span>@Session["ProfileName"]</span>
+                    <ul>
+                        <li><a href="@Url.Action("Profile", "Account")"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="@Url.Action("Logout", "Account")"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <script>
+
+        $(document).ready(function () {
+            $('#@ViewBag.Active').addClass('active');
+        });
+
+
+    </script>
+
+</body>
+</html>

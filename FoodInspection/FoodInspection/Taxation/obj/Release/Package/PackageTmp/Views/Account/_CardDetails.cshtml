@@ -1,0 +1,373 @@
+﻿@model List<Core.CardDetails>
+@{
+    ViewBag.Title = "Payment Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="c_card">
+
+    @using (Html.BeginForm("PaywithCreditCard", "Payment", FormMethod.Post, new { @class = "pay_amout", id = "myCCForm" }))
+    {
+        <script type="text/javascript" src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        @*<form id="myCCForm" action="@Url.Action("PaywithCreditCard","Payment")" method="post">*@
+        <div class="">
+            <input type="hidden" name="token" value="" />
+            <input type="hidden" id="CardId" name="CardId" />
+            <input type="hidden" id="CardNumber" name="CardNumber" />
+            <input type="hidden" id="NameOnCard" name="NameOnCard" />
+            <input type="hidden" id="ExpirationMonth" name="ExpirationMonth" />
+            <input type="hidden" id="ExpirationYear" name="ExpirationYear" />
+            <input type="hidden" id="CVV" name="CVV" />
+            <input type="hidden" id="CardType" name="CardType" />
+
+            <h3>Payment</h3>
+            <table>
+                <tr>
+                    <td>Plane</td>
+                    <td>
+                        @Html.Label("PlanName", Convert.ToString(TempData["PlanName"]), new { id = "PlanName" })
+                        <input type="hidden" id="PlanName" name="PlanName" value="@Convert.ToString(TempData["PlanName"])" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td>
+                        @Html.Label("Amount", Convert.ToString(TempData["Amount"]), new { id = "PayableAmount" })
+                        <input type="hidden" id="Amount" name="Amount" value="=@Convert.ToString(TempData["Amount"])" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Validity</td>
+                    <td>
+                        @Html.Label("ValidTill", Convert.ToString(TempData["Validity"] + " Days"), new { id = "ExpiryDays" })
+                        <input type="hidden" id="ValidTill" name="ValidTill" value="@Convert.ToString(TempData["Validity"])" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pay Using the Card</td>
+                    <td>
+                        @{ // you can put the following in a back-end method and pass through ViewBag
+        IEnumerable<SelectListItem> selectList = Model.Select(x => new SelectListItem
+            {
+                //Selected = x.IsDefault ? true : false,
+                Text = x.CardNumber,
+                Value = x.CardId.ToString()
+            });
+                        }
+                        @Html.DropDownList("CardDetails", selectList, "Select Any Card", new { id = "CardDetails" })
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="btn blue_btn" value="Pay" id="pay_click" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        @*</form>*@
+    }
+
+
+    @using (Html.BeginForm("CardDetails", "Account", FormMethod.Post, new { @class = "ent_crd_det", id = "addCard" }))
+    {
+        <div class="">
+            <h3>Add Card</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>Card Number</label>
+                            @Html.TextBox("CardNumber", null, new { id = "txtCardNumber", maxLength = "20" })
+                            <img src="#" style="height: 50px; width: 50px; display: none;" id="imgType" />
+                            <input type="hidden" name="CardType" id="cardtype" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Name on The Card</label>
+                            @Html.TextBox("NameOnCard")
+                        </td>
+                    </tr>
+                    <tr class="adj_crd">
+                        <td>
+                            <label>EXP Month</label>
+                            @Html.DropDownList("ExpirationMonth", EnumHelper.GetSelectList(typeof(Core.Months)), "Select Month")
+                        </td>
+                    </tr>
+                    <tr class="adj_crd">
+                        <td>
+                            <label>EXP Year</label>
+                            @Html.DropDownList("ExpirationYear", EnumHelper.GetSelectList(typeof(Core.Years)), "Select Year")
+                        </td>
+                    </tr>
+                    <tr class="adj_crd" style="width:28%;">
+                        <td>
+                            <label>CVV</label>
+                            @Html.TextBox("CVV", null, new { maxLength = "4" })
+                        </td>
+                    </tr>
+                    <tr class="adj_crd">
+                        <td>@Html.CheckBox("IsDefault") <label>Default</label></td>
+                    </tr>
+                    <tr class="adj_crd">
+                        <td>@Html.CheckBox("IsAutoRenewable") <label>Auto Pay</label></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;padding: 10px 0 0;">
+                            <button class="btn blue_btn" name="Operation" value="AddCard" style="width: 100px;">
+                                Add
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div class="crds">
+    @if (Model.Count > 0)
+    {
+        <h3>Saved Cards</h3>
+        foreach (var item in Model)
+        {
+            <div class="crd" id="div_@item.CardId">
+                @if (@item.IsDefault)
+                {
+                    <i class="fa fa-flag-checkered df_crd" aria-hidden="true"></i>
+                }
+                <i class="fa fa-trash-o dl_m" onclick="return DeleteCard(@item.CardId);"></i>
+                <h3>@item.CardNumber</h3>
+                <h4>@item.NameOnCard</h4>
+                <h5><span>Valid Through</span> @item.ExpirationMonth/@item.ExpirationYear</h5>
+                <h5><span>CVV</span> @item.CVV</h5>
+                <img name="@Enum.GetName(typeof(Core.CardType),item.CardType)" src="../../Images/@(item.CardType).png" />
+            </div>
+        }
+    }
+</div>
+
+<div class="pay_sucess">
+    <i class="fa fa-check"></i><h3>Congratulations</h3>
+    <p>Your Payment Successfully Completed.</p>
+    <button class="btnresponse">Done</button>
+</div>
+<div class="pay_overlay" style="display:none;"></div>
+<div class="pay_failed">
+    <i class="fa fa-times"></i><h3>SORRY</h3>
+    <p>Your Payment transaction is failed.</p>
+    <button class="btnresponse">Retry</button>
+</div>
+
+@if (Convert.ToString(TempData["IsSucess"]) != "")
+{
+    if (Convert.ToString(TempData["IsSucess"]) == "True")
+    {
+        <script>
+           
+                $('.pay_sucess').addClass('show_sucess');
+                $('.pay_overlay').show();
+           
+        </script>
+    }
+    else
+    {
+        <script>
+            
+                $('.pay_failed').addClass('show_fail');
+                $('.pay_overlay').show();
+           
+        </script>
+
+    }
+}
+
+
+<script src="~/Scripts/jquery.creditCardValidator.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery-Validations.js"></script>
+
+<script>
+
+    $('.btnresponse').click(function () {
+        debugger;
+        $('.pay_sucess').removeClass('show_sucess');
+        $('.pay_overlay').hide();
+        window.location.replace("@Url.Action("Profile", "Account")");
+    });
+
+    $("#CardDetails").change(function () {
+        debugger;
+        var CardId = $('#CardDetails').val();
+        var ExpiryMonth = ($('#div_' + CardId + ' h5').first().text()).replace($('#div_' + CardId + ' h5').first().find('span').text(), '').split('/')[0].trim();
+        var ExpiryYear = ($('#div_' + CardId + ' h5').first().text()).replace($('#div_' + CardId + ' h5').first().find('span').text(), '').split('/')[1].trim();
+        var Name = $('#div_' + CardId + ' h4').text();
+        var Type = $('#div_' + CardId).find('img').attr('name')
+
+        GetccNo(CardId);
+
+        $('#CardId').val(CardId);
+        $('#NameOnCard').val(Name);
+        $('#ExpirationMonth').val(ExpiryMonth);
+        $('#ExpirationYear').val(ExpiryYear);
+        $('#CardType').val(Type);
+        $('#PlanName').val($('#PlanName').text());
+        $('#Amount').val($('#PayableAmount').text());
+        $('#ValidTill').val($('#ExpiryDays').text());
+
+    });
+
+    var successCallback = function (data) {
+        debugger;
+        var myForm = document.getElementById('myCCForm');
+        myForm.token.value = data.response.token.token;
+        myForm.submit();
+    };
+
+    var errorCallback = function (data) {
+        if (data.errorCode === 200);
+        else alert(data.errorMsg);
+    };
+
+    var tokenRequest = function () {
+        debugger;
+        var args = {
+            sellerId: "901325328",
+            publishableKey: "B2CED53C-42D0-474D-BB89-72971E10EC23",
+            ccNo: $('#CardNumber').val(),
+            cvv: $("#CVV").val(),
+            expMonth: $("#ExpirationMonth").val(),
+            expYear: $("#ExpirationYear").val()
+        };
+        TCO.requestToken(successCallback, errorCallback, args);
+    };
+
+    $(function () {
+        TCO.loadPubKey('sandbox');
+        $("#myCCForm").submit(function (e) {
+            debugger;
+            tokenRequest();
+            return false;
+        });
+    });
+
+    function GetccNo(id) {
+        debugger;
+
+        $.ajax({
+            url: '/Account/GetCardNumber',
+            type: 'POST',
+            data: '{ "data":' + id + '}',
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                debugger;
+                $('#CardNumber').val(result.Card);
+                $('#CVV').val(result.Cvv);
+            }
+        });
+    };
+
+    $(document).ready(function () {
+        debugger;
+        var val = '@TempData["CardExist"]';
+        if (val) {
+            alert("Card Already Exists, Please find the Card below");
+        }
+    });
+
+    function DeleteCard(id) {
+        if (confirm('Are you Sure You want to Delete this Card..?')) {
+            var data = JSON.stringify({
+                CardId: id
+            });
+
+            $.ajax({
+                url: '@Url.Action("DeleteCard","Account")',
+                type: 'POST',
+                data: data,
+                contentType: 'application/json; charset=utf-8',
+                success: function () {
+                    $('#div_' + id).hide();
+                },
+                error: function () {
+                    alert("Unable to Delete the Card, Please try Again");
+                }
+            });
+        }
+        return false;
+    };
+
+    $(document).ready(function () {
+        $("#txtCardNumber, #CVV").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+                (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+    });
+
+    $(function () {
+        $('#txtCardNumber').validateCreditCard(function (result) {
+
+            var CardType = result.card_type == null ? '-' : result.card_type.name;
+
+            switch (CardType) {
+                case 'visa':
+                    $('#imgType').attr('src', '../../Images/' + 1 + '.png').show();
+                    $('#cardtype').val('1');
+                    break;
+                case 'maestro':
+                    $('#imgType').attr('src', '../../Images/' + 2 + '.png').show();
+                    $('#cardtype').val('2');
+                    break;
+                case 'mastercard':
+                    $('#imgType').attr('src', '../../Images/' + 3 + '.png').show();
+                    $('#cardtype').val('3');
+                    break;
+                case 'amex':
+                    $('#imgType').attr('src', '../../Images/' + 4 + '.png').show();
+                    $('#cardtype').val('4');
+                    break;
+                case 'diners_club_international':
+                    $('#imgType').attr('src', '../../Images/' + 6 + '.png').show();
+                    $('#cardtype').val('6');
+                    break;
+                case 'discover':
+                    $('#imgType').attr('src', '../../Images/' + 7 + '.png').show();
+                    $('#cardtype').val('7');
+                    break;
+                case 'jcb':
+                    $('#imgType').attr('src', '../../Images/' + 8 + '.png').show();
+                    $('#cardtype').val('8');
+                    break;
+                case 'laser':
+                    $('#imgType').attr('src', '../../Images/' + 9 + '.png').show();
+                    $('#cardtype').val('9');
+                    break;
+                case 'visa_electron':
+                    $('#imgType').attr('src', '../../Images/' + 10 + '.png').show();
+                    $('#cardtype').val('10');
+                    break;
+                default:
+                    $('#imgType').hide();
+                    break;
+            }
+
+        });
+    });
+
+</script>
+

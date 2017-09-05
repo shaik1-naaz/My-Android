@@ -1,0 +1,43 @@
+Data Time:7/19/2016 12:09:55 PM
+Exception Name:No connection string named 'TaxationEntities' could be found in the application config file.
+Event Name:Login
+Control Name:Account
+Data Time:7/19/2016 12:10:47 PM
+Exception Name:No connection string named 'TaxationEntities' could be found in the application config file.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/19/2016 12:14:47 PM
+Exception Name:No connection string named 'TaxationEntities' could be found in the application config file.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/19/2016 12:17:30 PM
+Exception Name:No connection string named 'TaxationEntities' could be found in the application config file.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/19/2016 12:40:57 PM
+Exception Name:The controller for path '/Shared/PageNotFound' was not found or does not implement IController.
+Event Name:PageNotFound
+Control Name:Shared
+*************************---------------------------**************************
+Data Time:7/19/2016 2:55:18 PM
+Exception Name:An error occurred while preparing the command definition. See the inner exception for details.
+Event Name:Login
+Control Name:Account
+*************************---------------------------**************************
+Data Time:7/19/2016 3:11:00 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Users
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/19/2016 3:11:18 PM
+Exception Name:Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+Event Name:Users
+Control Name:Admin
+*************************---------------------------**************************
+Data Time:7/19/2016 4:02:06 PM
+Exception Name:No connection string named 'TaxationEntities' could be found in the application config file.
+Event Name:Login
+Control Name:Account
